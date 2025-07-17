@@ -1,42 +1,53 @@
 
-import { useRef, useEffect } from 'react';
-import { Canvas, useFrame } from '@react-three/fiber';
+import { Suspense } from 'react';
+import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Sphere, MeshDistortMaterial } from '@react-three/drei';
-import * as THREE from 'three';
+import { ErrorBoundary } from 'react-error-boundary';
 
-const AnimatedSphere = ({ position, color }: { position: [number, number, number], color: string }) => {
-  const meshRef = useRef<THREE.Mesh>(null);
-  
-  useFrame((state) => {
-    if (meshRef.current) {
-      meshRef.current.rotation.x = state.clock.elapsedTime * 0.5;
-      meshRef.current.rotation.y = state.clock.elapsedTime * 0.3;
-    }
-  });
-
+function AnimatedSphere() {
   return (
-    <Sphere ref={meshRef} position={position} args={[1, 100, 200]}>
+    <Sphere visible args={[1, 100, 200]} scale={2}>
       <MeshDistortMaterial
-        color={color}
+        color="#8B5CF6"
         attach="material"
-        distort={0.5}
+        distort={0.3}
         speed={2}
-        roughness={0.1}
-        metalness={0.8}
+        roughness={0.4}
       />
     </Sphere>
   );
-};
+}
+
+function ErrorFallback({ error }: { error: Error }) {
+  console.error('ThreeScene error:', error);
+  return (
+    <div className="flex items-center justify-center h-full">
+      <div className="text-white/60">3D Scene Loading...</div>
+    </div>
+  );
+}
+
+function CanvasWrapper() {
+  return (
+    <Canvas
+      camera={{ position: [0, 0, 5] }}
+      style={{ background: 'transparent' }}
+      gl={{ antialias: true, alpha: true }}
+    >
+      <Suspense fallback={null}>
+        <ambientLight intensity={0.5} />
+        <directionalLight position={[10, 10, 5]} intensity={1} />
+        <AnimatedSphere />
+        <OrbitControls enableZoom={false} />
+      </Suspense>
+    </Canvas>
+  );
+}
 
 export const ThreeScene = () => {
   return (
-    <Canvas className="absolute inset-0 z-0">
-      <ambientLight intensity={0.5} />
-      <directionalLight position={[10, 10, 5]} intensity={1} />
-      <AnimatedSphere position={[-2, 0, 0]} color="#8B5CF6" />
-      <AnimatedSphere position={[2, 0, 0]} color="#EC4899" />
-      <AnimatedSphere position={[0, 2, 0]} color="#06B6D4" />
-      <OrbitControls enableZoom={false} autoRotate autoRotateSpeed={0.5} />
-    </Canvas>
+    <ErrorBoundary FallbackComponent={ErrorFallback}>
+      <CanvasWrapper />
+    </ErrorBoundary>
   );
 };
