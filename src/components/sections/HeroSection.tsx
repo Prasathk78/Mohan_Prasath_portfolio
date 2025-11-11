@@ -29,7 +29,7 @@ export const HeroSection = ({ setCurrentSection }: HeroSectionProps) => {
             transition={{ delay: 0.2, duration: 0.8 }}
             className="text-6xl md:text-8xl font-bold bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent"
           >
-            John Doe
+            Mohan Prasath K
           </motion.h1>
 
           <motion.p
@@ -48,7 +48,7 @@ export const HeroSection = ({ setCurrentSection }: HeroSectionProps) => {
             className="flex flex-col md:flex-row gap-4 justify-center items-center"
           >
             <motion.button
-              onClick={() => setCurrentSection('contact')}
+              onClick={() => window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' })}
               whileHover={{ scale: 1.05, boxShadow: '0 0 30px rgba(139, 92, 246, 0.5)' }}
               whileTap={{ scale: 0.95 }}
               className="px-8 py-3 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full text-white font-semibold flex items-center gap-2 hover:from-purple-600 hover:to-pink-600 transition-all"
@@ -57,15 +57,16 @@ export const HeroSection = ({ setCurrentSection }: HeroSectionProps) => {
               Hire Me
             </motion.button>
 
-            <motion.button
-              onClick={() => setCurrentSection('resume')}
+            <motion.a
+              href="#"
+              download="Mohan-Prasath-K-Resume.pdf"
               whileHover={{ scale: 1.05, boxShadow: '0 0 30px rgba(236, 72, 153, 0.3)' }}
               whileTap={{ scale: 0.95 }}
               className="px-8 py-3 border-2 border-white/30 rounded-full text-white font-semibold flex items-center gap-2 hover:bg-white/10 transition-all backdrop-blur-sm"
             >
               <Download size={20} />
               Download Resume
-            </motion.button>
+            </motion.a>
           </motion.div>
         </motion.div>
 

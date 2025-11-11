@@ -2,6 +2,7 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
+import { ThemeToggle } from './ThemeToggle';
 
 interface NavigationProps {
   currentSection: string;
@@ -12,11 +13,8 @@ const sections = [
   { id: 'hero', title: 'Home' },
   { id: 'about', title: 'About' },
   { id: 'projects', title: 'Projects' },
-  { id: 'skills', title: 'Skills' },
-  { id: 'contact', title: 'Contact' },
-  { id: 'articles', title: 'Articles' },
+  { id: 'education', title: 'Education' },
   { id: 'profiles', title: 'Profiles' },
-  { id: 'resume', title: 'Resume' },
 ];
 
 export const Navigation = ({ currentSection, setCurrentSection }: NavigationProps) => {
@@ -55,10 +53,12 @@ export const Navigation = ({ currentSection, setCurrentSection }: NavigationProp
                   {section.title}
                 </motion.button>
               ))}
+              <ThemeToggle />
             </div>
 
             {/* Mobile Menu Toggle */}
-            <div className="md:hidden">
+            <div className="md:hidden flex items-center gap-4">
+              <ThemeToggle />
               <button
                 onClick={() => setIsOpen(!isOpen)}
                 className="text-foreground"

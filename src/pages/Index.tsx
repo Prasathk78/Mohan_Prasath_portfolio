@@ -7,11 +7,9 @@ import { SocialLinks } from '../components/SocialLinks';
 import { HeroSection } from '../components/sections/HeroSection';
 import { AboutSection } from '../components/sections/AboutSection';
 import { ProjectsSection } from '../components/sections/ProjectsSection';
-import { SkillsSection } from '../components/sections/SkillsSection';
-import { ContactSection } from '../components/sections/ContactSection';
-import { ArticlesSection } from '../components/sections/ArticlesSection';
+import { EducationSection } from '../components/sections/EducationSection';
 import { ProfilesSection } from '../components/sections/ProfilesSection';
-import { ResumeSection } from '../components/sections/ResumeSection';
+import { Footer } from '../components/Footer';
 
 const Index = () => {
   const [currentSection, setCurrentSection] = useState('hero');
@@ -36,50 +34,49 @@ const Index = () => {
         return <AboutSection />;
       case 'projects':
         return <ProjectsSection />;
-      case 'skills':
-        return <SkillsSection />;
-      case 'contact':
-        return <ContactSection />;
-      case 'articles':
-        return <ArticlesSection />;
+      case 'education':
+        return <EducationSection />;
       case 'profiles':
         return <ProfilesSection />;
-      case 'resume':
-        return <ResumeSection />;
       default:
         return <HeroSection setCurrentSection={setCurrentSection} />;
     }
   };
 
   return (
-    <div className="min-h-screen bg-black text-white relative overflow-hidden">
+    <div className="min-h-screen bg-background text-foreground relative overflow-hidden">
       {/* Animated Background */}
       <div className="fixed inset-0 z-0">
         <ParticleBackground />
         <div className="absolute inset-0 bg-gradient-to-br from-purple-900/10 via-transparent to-pink-900/10" />
       </div>
 
-      {/* Navigation */}
-      <Navigation currentSection={currentSection} setCurrentSection={setCurrentSection} />
+      <div className="relative z-10">
+        {/* Navigation */}
+        <Navigation currentSection={currentSection} setCurrentSection={setCurrentSection} />
 
-      {/* Social Links */}
-      <SocialLinks />
+        {/* Social Links */}
+        <SocialLinks />
 
-      {/* Main Content */}
-      <main className="relative z-10">
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={currentSection}
-            initial="initial"
-            animate="in"
-            exit="out"
-            variants={pageVariants}
-            transition={pageTransition}
-          >
-            {renderSection()}
-          </motion.div>
-        </AnimatePresence>
-      </main>
+        {/* Main Content */}
+        <main className="min-h-screen">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={currentSection}
+              initial="initial"
+              animate="in"
+              exit="out"
+              variants={pageVariants}
+              transition={pageTransition}
+            >
+              {renderSection()}
+            </motion.div>
+          </AnimatePresence>
+        </main>
+
+        {/* Footer */}
+        <Footer />
+      </div>
     </div>
   );
 };
