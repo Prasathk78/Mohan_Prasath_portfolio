@@ -3,9 +3,9 @@ import { motion } from 'framer-motion';
 import { Github, Linkedin, Instagram } from 'lucide-react';
 
 const socialLinks = [
-  { icon: Github, href: 'https://github.com', label: 'GitHub' },
-  { icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
-  { icon: Instagram, href: 'https://instagram.com', label: 'Instagram' },
+  { icon: Github, href: 'https://github.com', label: 'GitHub', gradient: 'from-gray-600 to-gray-800' },
+  { icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn', gradient: 'from-blue-500 to-blue-700' },
+  { icon: Instagram, href: 'https://instagram.com', label: 'Instagram', gradient: 'from-pink-500 via-purple-500 to-orange-500' },
 ];
 
 export const SocialLinks = () => {
@@ -22,14 +22,16 @@ export const SocialLinks = () => {
           href={link.href}
           target="_blank"
           rel="noopener noreferrer"
-          whileHover={{ scale: 1.2, x: 5 }}
+          whileHover={{ scale: 1.2, x: 10, rotate: 5 }}
           whileTap={{ scale: 0.9 }}
-          className="p-3 bg-white/10 backdrop-blur-sm rounded-full text-white/60 hover:text-white hover:bg-purple-500/20 transition-all border border-white/20"
+          className={`relative p-3 bg-gradient-to-br ${link.gradient} rounded-full shadow-lg hover:shadow-2xl transition-all group overflow-hidden`}
           title={link.label}
         >
-          <link.icon size={20} />
+          <div className="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity rounded-full" />
+          <link.icon size={22} className="text-white relative z-10" />
         </motion.a>
       ))}
+      <div className="w-0.5 h-16 bg-gradient-to-b from-purple-500/50 to-transparent mx-auto mt-2" />
     </motion.div>
   );
 };

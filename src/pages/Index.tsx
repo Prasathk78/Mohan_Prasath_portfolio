@@ -1,6 +1,5 @@
 
-import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useState, useEffect } from 'react';
 import { Navigation } from '../components/Navigation';
 import { ParticleBackground } from '../components/ParticleBackground';
 import { SocialLinks } from '../components/SocialLinks';
@@ -14,41 +13,34 @@ import { Footer } from '../components/Footer';
 const Index = () => {
   const [currentSection, setCurrentSection] = useState('hero');
 
-  const pageVariants = {
-    initial: { opacity: 0, y: 50 },
-    in: { opacity: 1, y: 0 },
-    out: { opacity: 0, y: -50 }
-  };
+  // Scroll spy - detect which section is in view
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = ['hero', 'about', 'education', 'projects', 'profiles', 'contact'];
+      const scrollPosition = window.scrollY + 100; // Account for navbar
 
-  const pageTransition = {
-    type: 'tween' as const,
-    ease: 'anticipate' as const,
-    duration: 0.8
-  };
+      for (const sectionId of sections) {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          const { offsetTop, offsetHeight } = element;
+          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+            setCurrentSection(sectionId);
+            break;
+          }
+        }
+      }
+    };
 
-  const renderSection = () => {
-    switch (currentSection) {
-      case 'hero':
-        return <HeroSection setCurrentSection={setCurrentSection} />;
-      case 'about':
-        return <AboutSection />;
-      case 'projects':
-        return <ProjectsSection />;
-      case 'education':
-        return <EducationSection />;
-      case 'profiles':
-        return <ProfilesSection />;
-      default:
-        return <HeroSection setCurrentSection={setCurrentSection} />;
-    }
-  };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
-    <div className="min-h-screen bg-background text-foreground relative overflow-hidden">
+    <div className="min-h-screen bg-background text-foreground relative overflow-x-hidden">
       {/* Animated Background */}
       <div className="fixed inset-0 z-0">
         <ParticleBackground />
-        <div className="absolute inset-0 bg-gradient-to-br from-purple-900/10 via-transparent to-pink-900/10" />
+        <div className="absolute inset-0 bg-gradient-to-br from-purple-900/10 via-transparent to-pink-900/10 dark:from-purple-900/20 dark:to-pink-900/20 transition-all duration-500" />
       </div>
 
       <div className="relative z-10">
@@ -58,24 +50,15 @@ const Index = () => {
         {/* Social Links */}
         <SocialLinks />
 
-        {/* Main Content */}
-        <main className="min-h-screen">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={currentSection}
-              initial="initial"
-              animate="in"
-              exit="out"
-              variants={pageVariants}
-              transition={pageTransition}
-            >
-              {renderSection()}
-            </motion.div>
-          </AnimatePresence>
+        {/* Main Content - Vertical Layout */}
+        <main>
+          <HeroSection setCurrentSection={setCurrentSection} />
+          <AboutSection />
+          <EducationSection />
+          <ProjectsSection />
+          <ProfilesSection />
+          <Footer />
         </main>
-
-        {/* Footer */}
-        <Footer />
       </div>
     </div>
   );

@@ -26,15 +26,16 @@ export const Footer = () => {
   };
 
   return (
-    <footer className="bg-card border-t border-border py-20 px-6">
+    <footer id="contact" className="bg-gradient-to-b from-transparent to-card/50 border-t border-border py-20 px-6">
       <div className="max-w-4xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.8 }}
           className="text-center mb-12"
         >
-          <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent mb-4">
+          <h2 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent mb-4">
             Get In Touch
           </h2>
           <p className="text-xl text-muted-foreground">
@@ -57,6 +58,7 @@ export const Footer = () => {
             onSubmit={handleSubmit}
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
             className="space-y-6"
           >
@@ -70,7 +72,7 @@ export const Footer = () => {
                   id="name"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:outline-none focus:border-purple-400 text-foreground transition-colors"
+                  className="w-full px-4 py-3 bg-card border border-border rounded-lg focus:outline-none focus:border-primary/50 text-foreground transition-colors"
                   required
                 />
               </div>
@@ -83,7 +85,7 @@ export const Footer = () => {
                   id="email"
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:outline-none focus:border-purple-400 text-foreground transition-colors"
+                  className="w-full px-4 py-3 bg-card border border-border rounded-lg focus:outline-none focus:border-primary/50 text-foreground transition-colors"
                   required
                 />
               </div>
@@ -97,7 +99,7 @@ export const Footer = () => {
                 value={formData.message}
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                 rows={6}
-                className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:outline-none focus:border-purple-400 text-foreground resize-none transition-colors"
+                className="w-full px-4 py-3 bg-card border border-border rounded-lg focus:outline-none focus:border-primary/50 text-foreground resize-none transition-colors"
                 required
               />
             </div>
