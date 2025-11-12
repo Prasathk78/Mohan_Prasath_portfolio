@@ -1,22 +1,24 @@
 import { motion } from 'framer-motion';
 import { Code, Award, Users, Zap } from 'lucide-react';
+
 const achievements = [{
   icon: Code,
-  title: '50+ Projects',
-  description: 'Built diverse applications'
+  title: '10+ Projects',
+  description: 'AI and web-based projects'
 }, {
   icon: Award,
-  title: '5+ Years',
-  description: 'Professional experience'
+  title: 'Published Research',
+  description: 'International journal paper'
 }, {
   icon: Users,
-  title: '100K+ Users',
-  description: 'Impacted globally'
+  title: '2 Internships',
+  description: 'ASPA & Sphere Heads'
 }, {
   icon: Zap,
-  title: 'Fast Delivery',
-  description: 'Always on time'
+  title: 'Full Stack',
+  description: 'Concept to deployment'
 }];
+
 export const AboutSection = () => {
   return <section id="about" className="min-h-screen flex items-center justify-center py-20 px-6">
       <div className="max-w-6xl mx-auto">
@@ -34,9 +36,7 @@ export const AboutSection = () => {
           <h2 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent mb-6">
             About Me
           </h2>
-          <p className="text-xl text-foreground/80 max-w-3xl mx-auto leading-relaxed">I'm an aspiring AI & Full Stack Developer passionate about building intelligent and visually appealing web applications. I love exploring how artificial intelligence, automation, and modern web technologies can make real-world systems smarter and more accessible.
-
-I’ve built multiple innovative projects — from weather prediction to AI-powered disaster risk mapping — that focus on both design and functionality.</p>
+          <p className="text-xl text-foreground/80 max-w-3xl mx-auto leading-relaxed">I believe in creating technology that connects people with possibility. I love building intelligent and accessible systems that merge AI, design, and performance. I'm capable of handling projects from concept to deployment with focus on clarity, speed, and usability. My work reflects precision, curiosity, and a deep drive to make technology meaningful.</p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -79,7 +79,7 @@ I’ve built multiple innovative projects — from weather prediction to AI-powe
       }} className="mt-16 text-center">
           <div className="bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-2xl p-8 backdrop-blur-sm border border-border shadow-lg">
             <p className="text-lg text-foreground/90 leading-relaxed">
-              "I believe in the power of technology to transform lives and businesses. 
+              "I believe in creating technology that connects people with possibility. 
               Every line of code I write is an opportunity to create something meaningful 
               and impactful. Let's build the future together."
             </p>

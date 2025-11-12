@@ -66,7 +66,7 @@ export const HeroSection = ({
         }} transition={{
           delay: 0.3,
           duration: 0.8
-        }} className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent">
+        }} className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent">
             Mohan Prasath K
           </motion.h1>
 
@@ -92,9 +92,16 @@ export const HeroSection = ({
             duration: 1.2,
             ease: "easeOut"
           }} className="inline-block">AI & Full Stack Developer (Student)
-🎓Bishop Heber College, Trichy
-📍 Tamil Nadu, India
           </motion.span>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.9, duration: 0.8 }}
+            className="text-lg text-foreground/70 mt-2"
+          >
+            🎓 Bishop Heber College, Trichy<br />
+            📍 Trichy, Tamil Nadu, India
+          </motion.div>
           </motion.div>
 
           {/* Download Button */}

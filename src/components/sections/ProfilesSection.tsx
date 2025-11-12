@@ -5,57 +5,30 @@ import { Github, Linkedin, Twitter, Instagram, Youtube, ExternalLink } from 'luc
 const profiles = [
   {
     name: 'GitHub',
-    username: '@johndoe',
+    username: '@Prasathk78',
     description: 'Open source projects and contributions',
     icon: Github,
     color: 'from-gray-600 to-gray-500',
-    link: 'https://github.com',
-    stats: '100+ repositories',
+    link: 'https://github.com/Prasathk78',
+    stats: '10+ repositories',
   },
   {
     name: 'LinkedIn',
-    username: '@johndoedev',
+    username: '@mohanprasathk28',
     description: 'Professional network and career updates',
     icon: Linkedin,
     color: 'from-blue-600 to-blue-500',
-    link: 'https://linkedin.com',
-    stats: '5K+ connections',
-  },
-  {
-    name: 'LeetCode',
-    username: '@johndoe',
-    description: 'Coding challenges and problem solving',
-    icon: ExternalLink,
-    color: 'from-orange-600 to-orange-500',
-    link: 'https://leetcode.com',
-    stats: '500+ problems solved',
-  },
-  {
-    name: 'Twitter',
-    username: '@johndoedev',
-    description: 'Tech thoughts and daily updates',
-    icon: Twitter,
-    color: 'from-sky-600 to-sky-500',
-    link: 'https://twitter.com',
-    stats: '10K+ followers',
-  },
-  {
-    name: 'YouTube',
-    username: '@johndoedev',
-    description: 'Coding tutorials and tech reviews',
-    icon: Youtube,
-    color: 'from-red-600 to-red-500',
-    link: 'https://youtube.com',
-    stats: '50K+ subscribers',
+    link: 'https://www.linkedin.com/in/mohanprasathk28',
+    stats: 'Connect with me',
   },
   {
     name: 'Instagram',
-    username: '@johndoedev',
+    username: '@praxath_mk',
     description: 'Behind the scenes and lifestyle',
     icon: Instagram,
     color: 'from-pink-600 to-purple-600',
-    link: 'https://instagram.com',
-    stats: '15K+ followers',
+    link: 'https://www.instagram.com/praxath_mk?igsh=MTM0bDFjaTc4bm93dg==',
+    stats: 'Follow me',
   },
 ];
 
@@ -78,7 +51,7 @@ export const ProfilesSection = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
           {profiles.map((profile, index) => (
             <motion.a
               key={index}

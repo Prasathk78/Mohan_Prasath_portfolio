@@ -125,9 +125,16 @@ export const Footer = () => {
           </motion.form>
         )}
 
-        <div className="mt-12 pt-8 border-t border-border text-center">
+        <div className="mt-12 pt-8 border-t border-border text-center space-y-4">
+          <div className="flex flex-col md:flex-row justify-center items-center gap-2 text-muted-foreground text-sm">
+            <span>📧 mohanprasathk78@gmail.com</span>
+            <span className="hidden md:inline">•</span>
+            <span>📱 +91 79049 50447</span>
+            <span className="hidden md:inline">•</span>
+            <span>📍 Trichy, Tamil Nadu, India</span>
+          </div>
           <p className="text-muted-foreground">
-            © {new Date().getFullYear()} Mohan Prasath K. All rights reserved.
+            © Copyright Mohan Prasath K – All Rights Reserved
           </p>
         </div>
       </div>

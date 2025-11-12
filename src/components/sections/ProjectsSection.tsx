@@ -4,28 +4,55 @@ import { ExternalLink, Github, Smartphone, Globe, Code } from 'lucide-react';
 
 const projects = [
   {
-    title: 'E-Commerce Platform',
-    description: 'Full-stack e-commerce solution with React, Node.js, and MongoDB',
+    title: 'SeeForMe',
+    description: 'AI-powered accessibility app with real-time object detection & audio feedback using YOLOv5 and BLIP',
     image: '/placeholder.svg',
-    tags: ['React', 'Node.js', 'MongoDB', 'Stripe'],
-    demoLink: '#',
-    codeLink: '#',
-    icon: Globe,
-  },
-  {
-    title: 'Mobile Banking App',
-    description: 'React Native banking app with biometric authentication',
-    image: '/placeholder.svg',
-    tags: ['React Native', 'Firebase', 'Biometrics'],
+    tags: ['Flutter', 'Flask', 'YOLOv5', 'BLIP', 'TTS'],
     demoLink: '#',
     codeLink: '#',
     icon: Smartphone,
   },
   {
-    title: 'AI Code Assistant',
-    description: 'VS Code extension powered by OpenAI for code completion',
+    title: 'FreeVerse',
+    description: 'Interactive learning platform focused on accessibility, interactivity, and performance',
     image: '/placeholder.svg',
-    tags: ['TypeScript', 'OpenAI', 'VS Code API'],
+    tags: ['React.js', 'Bootstrap'],
+    demoLink: 'https://lnkd.in/dfyX_nSu',
+    codeLink: '#',
+    icon: Globe,
+  },
+  {
+    title: 'ASPA Power Professionals',
+    description: 'Business website for solar and motor systems dealer',
+    image: '/placeholder.svg',
+    tags: ['HTML', 'CSS', 'JavaScript', 'Bootstrap'],
+    demoLink: 'https://aspa.onrender.com/',
+    codeLink: '#',
+    icon: Globe,
+  },
+  {
+    title: 'Weather Checker',
+    description: 'Real-time weather app for agricultural analysis using MERN Stack',
+    image: '/placeholder.svg',
+    tags: ['MongoDB', 'Express', 'React', 'Node.js'],
+    demoLink: '#',
+    codeLink: '#',
+    icon: Code,
+  },
+  {
+    title: 'Agri Connect',
+    description: 'Farmer-to-consumer connection platform using MERN Stack',
+    image: '/placeholder.svg',
+    tags: ['MongoDB', 'Express', 'React', 'Node.js'],
+    demoLink: '#',
+    codeLink: '#',
+    icon: Globe,
+  },
+  {
+    title: 'Crop Disease Detector',
+    description: 'AutoML-based crop disease detection system for farmers',
+    image: '/placeholder.svg',
+    tags: ['AutoML', 'Python', 'Machine Learning'],
     demoLink: '#',
     codeLink: '#',
     icon: Code,
@@ -51,7 +78,7 @@ export const ProjectsSection = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {projects.map((project, index) => (
             <motion.div
               key={index}

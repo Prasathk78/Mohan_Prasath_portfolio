@@ -3,83 +3,87 @@ import { GraduationCap, Award, Briefcase, Calendar, Clock, ExternalLink } from '
 import { RadialBarChart, RadialBar, PolarAngleAxis, ResponsiveContainer } from 'recharts';
 
 const skills = [
-  { name: 'React', level: 95, color: 'from-blue-500 to-cyan-500' },
-  { name: 'TypeScript', level: 90, color: 'from-blue-600 to-blue-400' },
-  { name: 'Node.js', level: 88, color: 'from-green-500 to-green-400' },
-  { name: 'Python', level: 85, color: 'from-yellow-500 to-yellow-400' },
-  { name: 'React Native', level: 80, color: 'from-purple-500 to-pink-500' },
-  { name: 'MongoDB', level: 82, color: 'from-green-600 to-green-500' },
-  { name: 'AWS', level: 75, color: 'from-orange-500 to-orange-400' },
-  { name: 'GraphQL', level: 78, color: 'from-pink-500 to-rose-500' },
+  { name: 'React.js', level: 90, color: 'from-blue-500 to-cyan-500' },
+  { name: 'Python', level: 88, color: 'from-yellow-500 to-yellow-400' },
+  { name: 'JavaScript', level: 85, color: 'from-yellow-600 to-yellow-400' },
+  { name: 'Flutter', level: 82, color: 'from-blue-600 to-blue-400' },
+  { name: 'Node.js', level: 80, color: 'from-green-500 to-green-400' },
+  { name: 'MongoDB', level: 78, color: 'from-green-600 to-green-500' },
+  { name: 'Flask', level: 75, color: 'from-gray-500 to-gray-400' },
+  { name: 'YOLOv5', level: 80, color: 'from-purple-500 to-pink-500' },
 ];
 
 const education = [
   {
-    degree: 'Bachelor of Science in Computer Science',
-    institution: 'University of Technology',
-    period: '2015 - 2019',
-    description: 'Specialized in software engineering and web development',
+    degree: 'Bachelor of Computer Applications (BCA)',
+    institution: 'Bishop Heber College, Trichy',
+    period: 'March 2023 - May 2026 (Expected)',
+    description: 'Specializing in AI, web development, and full-stack technologies',
   },
   {
-    degree: 'Master of Science in Software Engineering',
-    institution: 'Tech Institute',
-    period: '2019 - 2021',
-    description: 'Advanced studies in distributed systems and cloud architecture',
+    degree: 'Higher Secondary Education',
+    institution: 'Saraswathi Vidhayala Matric Hr. Sec School, Manapparai, Trichy',
+    period: 'Completed',
+    description: 'Foundation in science and mathematics',
   },
 ];
 
 const experience = [
   {
-    title: 'Senior Full Stack Developer',
-    company: 'Tech Corp',
-    period: '2021 - Present',
-    description: 'Leading development of scalable web applications',
+    title: 'Research Author',
+    company: 'Telematique Journal',
+    period: 'Accepted October 11, 2025',
+    description: 'Co-authored paper "SeeForMe: Real-Time Object Detection and Captioning for Visually Impaired Users Using YOLOv5 and BLIP" (ISSN: 1856-4194)',
   },
   {
-    title: 'Full Stack Developer',
-    company: 'StartUp Inc',
-    period: '2019 - 2021',
-    description: 'Built and maintained multiple client projects',
+    title: 'Full Stack Intern',
+    company: 'Sphere Heads, Trichy',
+    period: 'June 2025',
+    description: 'Worked on React.js, Node.js, MongoDB. Focused on API integration and component optimization',
   },
   {
-    title: 'Junior Developer',
-    company: 'Digital Agency',
-    period: '2018 - 2019',
-    description: 'Developed frontend components and APIs',
+    title: 'Web Development Intern',
+    company: 'ASPA, Tuticorin',
+    period: 'May 1-15, 2025',
+    description: 'Created and deployed a business website for a solar and motor system dealer using HTML, CSS, JS, Bootstrap',
   },
 ];
 
 const certifications = [
-  { name: 'AWS Certified Solutions Architect', year: '2023' },
-  { name: 'Google Cloud Professional', year: '2022' },
-  { name: 'MongoDB Certified Developer', year: '2021' },
-  { name: 'React Advanced Patterns', year: '2021' },
+  { name: 'Introduction to Artificial Intelligence – Great Learning', year: '2024' },
+  { name: 'Complete Python Pro Bootcamp – Udemy', year: '2024' },
+  { name: 'Mastering Advanced ChatGPT Prompt Engineering – Udemy', year: '2024' },
+  { name: 'Automated ML with Google Cloud – Udemy', year: '2024' },
+  { name: 'Google Ads Search Engine Campaign – Coursera', year: '2024' },
+  { name: 'Creating Promotional Videos using Canva – Coursera', year: '2024' },
+  { name: 'Web Development Internship – ASPA, Tuticorin', year: '2025' },
+  { name: 'Full Stack Internship – Sphere Heads, Trichy', year: '2025' },
 ];
 
 const articles = [
   {
-    title: 'Building Scalable React Applications',
-    excerpt: 'Learn best practices for creating maintainable and scalable React applications...',
-    date: '2024-01-15',
-    readTime: '8 min read',
+    title: 'SeeForMe: AI-Powered Accessibility for Visually Impaired',
+    excerpt: 'Published research on real-time object detection and captioning using YOLOv5 and BLIP to help visually impaired users navigate their environment...',
+    date: '2025-10-11',
+    readTime: '15 min read',
     link: '#',
-    tags: ['React', 'Architecture', 'Best Practices'],
+    tags: ['AI', 'Accessibility', 'Research'],
   },
   {
-    title: 'Modern CSS Techniques for 2024',
-    excerpt: 'Explore the latest CSS features and techniques that will improve your styling workflow...',
-    date: '2024-01-10',
-    readTime: '6 min read',
+    title: 'Building Full-Stack Apps with MERN Stack',
+    excerpt: 'Insights from building weather prediction and agricultural platforms using MongoDB, Express, React, and Node.js...',
+    date: '2025-06-01',
+    readTime: '10 min read',
     link: '#',
-    tags: ['CSS', 'Web Design', 'Frontend'],
+    tags: ['MERN', 'Full Stack', 'Web Development'],
   },
   {
-    title: 'TypeScript Tips and Tricks',
-    excerpt: 'Advanced TypeScript techniques that will make your code more robust and maintainable...',
-    date: '2024-01-05',
+    title: 'Flutter Development: From Concept to Deployment',
+    excerpt: 'Lessons learned from developing SeeForMe, a cross-platform accessibility app using Flutter and Flask backend...',
+    date: '2025-05-15',
     readTime: '12 min read',
     link: '#',
-    tags: ['TypeScript', 'Development', 'Tips'],
+    tags: ['Flutter', 'Mobile Dev', 'AI Integration'],
   },
 ];
 
