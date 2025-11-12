@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import { GraduationCap, Award, Briefcase, Calendar, Clock, ExternalLink } from 'lucide-react';
+import { RadialBarChart, RadialBar, PolarAngleAxis, ResponsiveContainer } from 'recharts';
 
 const skills = [
   { name: 'React', level: 95, color: 'from-blue-500 to-cyan-500' },
@@ -218,6 +219,58 @@ export const EducationSection = () => {
             </p>
           </motion.div>
 
+          {/* Radial Charts */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-6xl mx-auto mb-12">
+            {skills.map((skill, index) => (
+              <motion.div
+                key={skill.name}
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="flex flex-col items-center"
+              >
+                <ResponsiveContainer width="100%" height={150}>
+                  <RadialBarChart
+                    cx="50%"
+                    cy="50%"
+                    innerRadius="60%"
+                    outerRadius="80%"
+                    data={[{ name: skill.name, value: skill.level, fill: `url(#gradient-${index})` }]}
+                    startAngle={90}
+                    endAngle={-270}
+                  >
+                    <defs>
+                      <linearGradient id={`gradient-${index}`} x1="0" y1="0" x2="1" y2="1">
+                        <stop offset="0%" stopColor={index % 2 === 0 ? '#8b5cf6' : '#ec4899'} />
+                        <stop offset="100%" stopColor={index % 2 === 0 ? '#ec4899' : '#06b6d4'} />
+                      </linearGradient>
+                    </defs>
+                    <PolarAngleAxis type="number" domain={[0, 100]} tick={false} />
+                    <RadialBar
+                      background={{ fill: 'hsl(var(--muted))' }}
+                      dataKey="value"
+                      cornerRadius={10}
+                      animationDuration={1000}
+                      animationBegin={index * 100}
+                    />
+                    <text
+                      x="50%"
+                      y="50%"
+                      textAnchor="middle"
+                      dominantBaseline="middle"
+                      className="fill-foreground font-bold text-2xl"
+                    >
+                      {skill.level}%
+                    </text>
+                  </RadialBarChart>
+                </ResponsiveContainer>
+                <p className="text-foreground font-semibold text-center mt-2">{skill.name}</p>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Progress Bars */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {skills.map((skill, index) => (
               <SkillBar key={skill.name} skill={skill} index={index} />

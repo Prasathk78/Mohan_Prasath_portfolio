@@ -14,6 +14,7 @@ const sections = [
   { id: 'about', title: 'About' },
   { id: 'education', title: 'Education' },
   { id: 'projects', title: 'Projects' },
+  { id: 'blog', title: 'Blog' },
   { id: 'profiles', title: 'Profiles' },
 ];
 
@@ -48,9 +49,9 @@ export const Navigation = ({ currentSection, setCurrentSection }: NavigationProp
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.2 }}
-              className="text-2xl font-bold bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent"
+              className="text-xl md:text-2xl font-bold bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent"
             >
-              Portfolio
+              Mohan Prasath's Portfolio
             </motion.div>
 
             {/* Desktop Menu */}
@@ -62,7 +63,7 @@ export const Navigation = ({ currentSection, setCurrentSection }: NavigationProp
                   className={`relative text-muted-foreground hover:text-foreground transition-colors ${
                     currentSection === section.id ? 'text-primary font-semibold' : ''
                   }`}
-                  whileHover={{ scale: 1.05, y: -2 }}
+                  whileHover={{ y: -2 }}
                   whileTap={{ scale: 0.95 }}
                 >
                   {section.title}
