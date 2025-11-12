@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import { useEffect, useState } from 'react';
 import { GraduationCap, Award, Briefcase, Calendar, Clock, ExternalLink } from 'lucide-react';
 import { RadialBarChart, RadialBar, PolarAngleAxis, ResponsiveContainer } from 'recharts';
 
@@ -84,39 +83,6 @@ const articles = [
   },
 ];
 
-const SkillBar = ({ skill, index }: { skill: typeof skills[0], index: number }) => {
-  const [animatedLevel, setAnimatedLevel] = useState(0);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setAnimatedLevel(skill.level);
-    }, index * 200);
-
-    return () => clearTimeout(timer);
-  }, [skill.level, index]);
-
-  return (
-    <motion.div
-      initial={{ opacity: 0, x: -50 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="mb-6"
-    >
-      <div className="flex justify-between items-center mb-2">
-        <span className="text-foreground font-semibold">{skill.name}</span>
-        <span className="text-muted-foreground">{skill.level}%</span>
-      </div>
-      <div className="w-full bg-muted rounded-full h-3 overflow-hidden">
-        <motion.div
-          className={`h-full bg-gradient-to-r ${skill.color} rounded-full`}
-          initial={{ width: 0 }}
-          animate={{ width: `${animatedLevel}%` }}
-          transition={{ duration: 1, delay: index * 0.1 }}
-        />
-      </div>
-    </motion.div>
-  );
-};
 
 export const EducationSection = () => {
   return (
@@ -220,7 +186,7 @@ export const EducationSection = () => {
           </motion.div>
 
           {/* Radial Charts */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-6xl mx-auto mb-12">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-6xl mx-auto">
             {skills.map((skill, index) => (
               <motion.div
                 key={skill.name}
@@ -267,13 +233,6 @@ export const EducationSection = () => {
                 </ResponsiveContainer>
                 <p className="text-foreground font-semibold text-center mt-2">{skill.name}</p>
               </motion.div>
-            ))}
-          </div>
-
-          {/* Progress Bars */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {skills.map((skill, index) => (
-              <SkillBar key={skill.name} skill={skill} index={index} />
             ))}
           </div>
         </div>

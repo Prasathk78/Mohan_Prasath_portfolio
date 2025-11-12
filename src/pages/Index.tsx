@@ -7,7 +7,6 @@ import { HeroSection } from '../components/sections/HeroSection';
 import { AboutSection } from '../components/sections/AboutSection';
 import { ProjectsSection } from '../components/sections/ProjectsSection';
 import { EducationSection } from '../components/sections/EducationSection';
-import { BlogSection } from '../components/sections/BlogSection';
 import { ProfilesSection } from '../components/sections/ProfilesSection';
 import { Footer } from '../components/Footer';
 
@@ -17,7 +16,7 @@ const Index = () => {
   // Scroll spy - detect which section is in view
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['hero', 'about', 'education', 'projects', 'blog', 'profiles', 'contact'];
+      const sections = ['hero', 'about', 'education', 'projects', 'profiles', 'contact'];
       const scrollPosition = window.scrollY + 100; // Account for navbar
 
       for (const sectionId of sections) {
@@ -57,7 +56,6 @@ const Index = () => {
           <AboutSection />
           <EducationSection />
           <ProjectsSection />
-          <BlogSection />
           <ProfilesSection />
           <Footer />
         </main>
