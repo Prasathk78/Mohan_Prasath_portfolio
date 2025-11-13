@@ -41,7 +41,7 @@ export const HeroSection = ({
     }
   };
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden py-20">
       <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-background to-pink-900/20" />
       
       <div className="absolute inset-0 opacity-30">
@@ -49,24 +49,25 @@ export const HeroSection = ({
       </div>
 
       <div className="relative z-10 w-full max-w-7xl mx-auto px-6">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-16">
+        <div className="flex flex-col-reverse lg:flex-row items-center justify-between gap-8 lg:gap-12">
           
           {/* Left Section - Text Content */}
           <motion.div 
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            className="flex-1 text-center lg:text-left space-y-6"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="flex-1 w-full lg:w-auto text-center lg:text-left space-y-4"
           >
             {/* Greeting & Name */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.8 }}
+              className="space-y-2"
             >
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
                 👋 Hi, I'm{' '}
-                <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent block mt-1">
                   Mohan Prasath K
                 </span>
               </h1>
@@ -77,20 +78,19 @@ export const HeroSection = ({
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.8 }}
-              className="text-2xl md:text-3xl text-foreground/90 font-medium"
+              className="text-sm md:text-base text-purple-400 font-medium min-h-[24px]"
             >
               <ReactTyped
                 strings={[
-                  "AI Enthusiast.",
-                  "Full Stack Developer.",
-                  "Problem Solver.",
-                  "Innovator in Code.",
-                  "Learning Beyond Limits."
+                  "Full Stack Developer",
+                  "AI Developer",
+                  "Tech Explorer",
+                  "Building Ideas → Into Reality",
+                  "Creating Intelligent Systems"
                 ]}
                 typeSpeed={50}
                 backSpeed={30}
                 loop
-                className="text-purple-400"
               />
             </motion.div>
 
@@ -99,7 +99,7 @@ export const HeroSection = ({
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6, duration: 0.8 }}
-              className="min-h-[60px] flex items-center justify-center lg:justify-start"
+              className="min-h-[50px] flex items-center justify-center lg:justify-start pt-2"
             >
               <AnimatePresence mode="wait">
                 <motion.p
@@ -108,7 +108,7 @@ export const HeroSection = ({
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -10 }}
                   transition={{ duration: 0.5 }}
-                  className="text-lg md:text-xl text-foreground/70 italic"
+                  className="text-base md:text-lg text-foreground/70 italic leading-relaxed"
                 >
                   "{quotes[currentQuote]}"
                 </motion.p>
@@ -120,10 +120,10 @@ export const HeroSection = ({
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8, duration: 0.8 }}
-              className="text-base md:text-lg text-foreground/60"
+              className="text-sm md:text-base text-foreground/60 leading-relaxed pt-2 space-y-1"
             >
-              🎓 Bishop Heber College, Trichy<br />
-              📍 Trichy, Tamil Nadu, India
+              <div>🎓 Bishop Heber College, Trichy</div>
+              <div>📍 Trichy, Tamil Nadu, India</div>
             </motion.div>
 
             {/* Download Button */}
@@ -131,7 +131,7 @@ export const HeroSection = ({
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1, duration: 0.8 }}
-              className="flex justify-center lg:justify-start pt-4"
+              className="flex justify-center lg:justify-start pt-6"
             >
               <motion.a
                 href="#"
@@ -151,28 +151,36 @@ export const HeroSection = ({
 
           {/* Right Section - Profile Image */}
           <motion.div
-            initial={{ opacity: 0, x: 50, scale: 0.9 }}
-            animate={{ opacity: 1, x: 0, scale: 1 }}
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.3, duration: 0.8 }}
-            className="flex-1 flex justify-center lg:justify-end"
+            className="flex-shrink-0 flex justify-center lg:justify-end"
           >
             <motion.div
               animate={{
+                y: [0, -10, 0],
                 boxShadow: [
-                  '0 0 30px rgba(139, 92, 246, 0.3)',
-                  '0 0 50px rgba(236, 72, 153, 0.4)',
-                  '0 0 30px rgba(34, 211, 238, 0.3)',
-                  '0 0 30px rgba(139, 92, 246, 0.3)',
+                  '0 10px 40px rgba(139, 92, 246, 0.2)',
+                  '0 15px 50px rgba(236, 72, 153, 0.25)',
+                  '0 10px 40px rgba(34, 211, 238, 0.2)',
+                  '0 10px 40px rgba(139, 92, 246, 0.2)',
                 ]
               }}
               transition={{
-                duration: 4,
-                repeat: Infinity,
-                ease: "easeInOut"
+                y: {
+                  duration: 3,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                },
+                boxShadow: {
+                  duration: 4,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }
               }}
-              className="relative w-72 h-96 md:w-80 md:h-[28rem] rounded-2xl bg-gradient-to-br from-purple-500 via-pink-500 to-cyan-500 p-1 shadow-2xl"
+              className="relative w-64 h-80 md:w-72 md:h-96 rounded-2xl bg-gradient-to-br from-purple-500/80 via-pink-500/80 to-cyan-500/80 p-[2px] shadow-xl"
             >
-              <div className="w-full h-full rounded-2xl overflow-hidden">
+              <div className="w-full h-full rounded-2xl overflow-hidden bg-background">
                 <img 
                   src={profileImage} 
                   alt="Mohan Prasath K" 
