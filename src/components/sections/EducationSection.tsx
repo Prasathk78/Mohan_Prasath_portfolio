@@ -17,13 +17,13 @@ const education = [
   {
     degree: 'Bachelor of Computer Applications (BCA)',
     institution: 'Bishop Heber College, Trichy',
-    period: 'March 2023 - May 2026 (Expected)',
+    period: 'March 2023 - April 2026 (Expected)',
     description: 'Specializing in AI, web development, and full-stack technologies',
   },
   {
     degree: 'Higher Secondary Education',
     institution: 'Saraswathi Vidhayala Matric Hr. Sec School, Manapparai, Trichy',
-    period: 'Completed',
+    period: 'Completed March 2023',
     description: 'Foundation in science and mathematics',
   },
 ];
@@ -62,29 +62,13 @@ const certifications = [
 
 const articles = [
   {
-    title: 'SeeForMe: AI-Powered Accessibility for Visually Impaired',
-    excerpt: 'Published research on real-time object detection and captioning using YOLOv5 and BLIP to help visually impaired users navigate their environment...',
+    title: 'SeeForMe: Real-Time Object Detection and Captioning for Visually Impaired Users',
+    excerpt: 'Co-authored research paper on AI-powered accessibility using YOLOv5 and BLIP. Published in Telematique Journal (ISSN: 1856-4194).',
     date: '2025-10-11',
-    readTime: '15 min read',
-    link: '#',
-    tags: ['AI', 'Accessibility', 'Research'],
-  },
-  {
-    title: 'Building Full-Stack Apps with MERN Stack',
-    excerpt: 'Insights from building weather prediction and agricultural platforms using MongoDB, Express, React, and Node.js...',
-    date: '2025-06-01',
-    readTime: '10 min read',
-    link: '#',
-    tags: ['MERN', 'Full Stack', 'Web Development'],
-  },
-  {
-    title: 'Flutter Development: From Concept to Deployment',
-    excerpt: 'Lessons learned from developing SeeForMe, a cross-platform accessibility app using Flutter and Flask backend...',
-    date: '2025-05-15',
-    readTime: '12 min read',
-    link: '#',
-    tags: ['Flutter', 'Mobile Dev', 'AI Integration'],
-  },
+    readTime: '8 min read',
+    link: 'https://telematique.org',
+    tags: ['AI', 'Research', 'Accessibility'],
+  }
 ];
 
 

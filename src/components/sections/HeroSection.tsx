@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { ChevronDown, Download, Mail } from 'lucide-react';
 import { ThreeScene } from '../ThreeScene';
+import profileImage from '@/assets/profile.jpg';
 interface HeroSectionProps {
   setCurrentSection: (section: string) => void;
 }
@@ -49,9 +50,8 @@ export const HeroSection = ({
           duration: 0.8
         }} className="flex justify-center mb-8">
             <div className="relative w-64 h-80 rounded-2xl bg-gradient-to-br from-purple-500 via-pink-500 to-cyan-500 p-1 shadow-2xl">
-              <div className="w-full h-full rounded-2xl bg-card flex items-center justify-center overflow-hidden mx-0">
-                <div className="text-6xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-              </div>
+              <div className="w-full h-full rounded-2xl overflow-hidden">
+                <img src={profileImage} alt="Mohan Prasath K" className="w-full h-full object-cover" />
               </div>
             </div>
           </motion.div>
@@ -81,27 +81,27 @@ export const HeroSection = ({
           delay: 0.5,
           duration: 0.8
         }} className="text-xl md:text-2xl text-foreground/80 font-light">
-            <motion.span initial={{
-            x: -100,
-            opacity: 0
-          }} animate={{
-            x: 0,
-            opacity: 1
-          }} transition={{
-            delay: 0.7,
-            duration: 1.2,
-            ease: "easeOut"
-          }} className="inline-block">AI & Full Stack Developer (Student)
-          </motion.span>
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.9, duration: 0.8 }}
-            className="text-lg text-foreground/70 mt-2"
-          >
-            🎓 Bishop Heber College, Trichy<br />
-            📍 Trichy, Tamil Nadu, India
-          </motion.div>
+            <motion.span 
+              initial={{ x: -100, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{
+                delay: 0.7,
+                duration: 1.2,
+                ease: "easeOut"
+              }} 
+              className="inline-block"
+            >
+              AI & Full Stack Developer (Student)
+            </motion.span>
+            <motion.div
+              initial={{ opacity: 0, x: 100 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.9, duration: 0.8 }}
+              className="text-lg text-foreground/70 mt-2"
+            >
+              🎓 Bishop Heber College, Trichy<br />
+              📍 Trichy, Tamil Nadu, India
+            </motion.div>
           </motion.div>
 
           {/* Download Button */}

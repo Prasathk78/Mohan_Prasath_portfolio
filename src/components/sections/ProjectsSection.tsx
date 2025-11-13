@@ -18,7 +18,7 @@ const projects = [
     image: '/placeholder.svg',
     tags: ['React.js', 'Bootstrap'],
     demoLink: 'https://lnkd.in/dfyX_nSu',
-    codeLink: '#',
+    codeLink: 'https://github.com/Prasathk78',
     icon: Globe,
   },
   {
@@ -27,7 +27,7 @@ const projects = [
     image: '/placeholder.svg',
     tags: ['HTML', 'CSS', 'JavaScript', 'Bootstrap'],
     demoLink: 'https://aspa.onrender.com/',
-    codeLink: '#',
+    codeLink: 'https://github.com/Prasathk78',
     icon: Globe,
   },
   {
