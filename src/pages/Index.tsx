@@ -5,10 +5,12 @@ import { ParticleBackground } from '../components/ParticleBackground';
 import { SocialLinks } from '../components/SocialLinks';
 import { HeroSection } from '../components/sections/HeroSection';
 import { AboutSection } from '../components/sections/AboutSection';
+import { SkillsSection } from '../components/sections/SkillsSection';
 import { ProjectsSection } from '../components/sections/ProjectsSection';
 import { EducationSection } from '../components/sections/EducationSection';
 import { ProfilesSection } from '../components/sections/ProfilesSection';
 import { Footer } from '../components/Footer';
+import { Toaster } from '../components/ui/toaster';
 
 const Index = () => {
   const [currentSection, setCurrentSection] = useState('hero');
@@ -16,8 +18,8 @@ const Index = () => {
   // Scroll spy - detect which section is in view
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['hero', 'about', 'education', 'projects', 'profiles', 'contact'];
-      const scrollPosition = window.scrollY + 100; // Account for navbar
+      const sections = ['hero', 'about', 'skills', 'education', 'projects', 'profiles', 'contact'];
+      const scrollPosition = window.scrollY + 100;
 
       for (const sectionId of sections) {
         const element = document.getElementById(sectionId);
@@ -50,15 +52,17 @@ const Index = () => {
         {/* Social Links */}
         <SocialLinks />
 
-        {/* Main Content - Vertical Layout */}
         <main>
           <HeroSection setCurrentSection={setCurrentSection} />
           <AboutSection />
+          <SkillsSection />
           <EducationSection />
           <ProjectsSection />
           <ProfilesSection />
           <Footer />
         </main>
+        
+        <Toaster />
       </div>
     </div>
   );
