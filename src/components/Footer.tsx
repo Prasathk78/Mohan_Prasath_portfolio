@@ -26,8 +26,17 @@ export const Footer = () => {
   };
 
   return (
-    <footer id="contact" className="bg-gradient-to-b from-transparent to-card/50 border-t border-border py-20 px-6">
-      <div className="max-w-4xl mx-auto">
+    <footer id="contact" className="relative bg-gradient-to-b from-transparent to-card/50 py-20 px-6 overflow-hidden">
+      {/* Premium gradient separator line */}
+      <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-purple-500/50 to-transparent" />
+      
+      {/* Subtle particle glow background */}
+      <div className="absolute inset-0 opacity-20">
+        <div className="absolute top-20 left-10 w-32 h-32 bg-purple-500/30 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 right-10 w-40 h-40 bg-pink-500/30 rounded-full blur-3xl" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-cyan-500/20 rounded-full blur-3xl" />
+      </div>
+      <div className="max-w-4xl mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -125,18 +134,28 @@ export const Footer = () => {
           </motion.form>
         )}
 
-        <div className="mt-12 pt-8 border-t border-border text-center space-y-4">
-          <div className="flex flex-col md:flex-row justify-center items-center gap-2 text-muted-foreground text-sm">
-            <span>📧 mohanprasathk78@gmail.com</span>
-            <span className="hidden md:inline">•</span>
-            <span>📱 +91 79049 50447</span>
-            <span className="hidden md:inline">•</span>
-            <span>📍 Trichy, Tamil Nadu, India</span>
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="mt-16 pt-8 border-t border-border/50 text-center space-y-6"
+        >
+          <div className="flex flex-col items-center gap-3 text-muted-foreground text-sm">
+            <span className="flex items-center gap-2">📧 mohanprasathk78@gmail.com</span>
+            <span className="flex items-center gap-2">📱 +91 79049 50447</span>
+            <span className="flex items-center gap-2">📍 Trichy, Tamil Nadu, India</span>
           </div>
-          <p className="text-muted-foreground">
+          <motion.p 
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+            className="text-muted-foreground text-sm"
+          >
             © Copyright Mohan Prasath K – All Rights Reserved
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
       </div>
     </footer>
   );
