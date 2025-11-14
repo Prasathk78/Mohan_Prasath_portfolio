@@ -48,8 +48,11 @@ export const HeroSection = ({
         <ThreeScene />
       </div>
 
+      {/* Subtle spotlight glow behind image */}
+      <div className="absolute right-[10%] top-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gradient-to-br from-purple-500/20 via-pink-500/20 to-transparent rounded-full blur-[150px] opacity-20" />
+
       <div className="relative z-10 w-full max-w-7xl mx-auto px-6">
-        <div className="flex flex-col-reverse lg:flex-row items-center justify-between gap-8 lg:gap-12">
+        <div className="flex flex-col-reverse lg:flex-row items-center justify-center gap-10 lg:gap-12">
           
           {/* Left Section - Text Content */}
           <motion.div 
@@ -60,13 +63,13 @@ export const HeroSection = ({
           >
             {/* Greeting & Name */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.2, duration: 0.8 }}
               className="space-y-2"
             >
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
-                👋 Hi, I'm{' '}
+                ✨ Hi, I'm{' '}
                 <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent block mt-1">
                   Mohan Prasath K
                 </span>
@@ -154,26 +157,15 @@ export const HeroSection = ({
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.3, duration: 0.8 }}
-            className="flex-shrink-0 flex justify-center lg:justify-end"
+            className="flex-shrink-0 max-w-[350px]"
           >
             <motion.div
               animate={{
                 y: [0, -10, 0],
-                boxShadow: [
-                  '0 10px 40px rgba(139, 92, 246, 0.2)',
-                  '0 15px 50px rgba(236, 72, 153, 0.25)',
-                  '0 10px 40px rgba(34, 211, 238, 0.2)',
-                  '0 10px 40px rgba(139, 92, 246, 0.2)',
-                ]
               }}
               transition={{
                 y: {
                   duration: 3,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                },
-                boxShadow: {
-                  duration: 4,
                   repeat: Infinity,
                   ease: "easeInOut"
                 }
