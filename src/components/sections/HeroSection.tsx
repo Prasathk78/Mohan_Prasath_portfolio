@@ -1,31 +1,13 @@
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { ChevronDown, Download } from 'lucide-react';
-import { ThreeScene } from '../ThreeScene';
 import profileImage from '@/assets/profile.jpg';
 import { ReactTyped } from 'react-typed';
-import { useState, useEffect } from 'react';
 interface HeroSectionProps {
   setCurrentSection: (section: string) => void;
 }
 export const HeroSection = ({
   setCurrentSection
 }: HeroSectionProps) => {
-  const quotes = [
-    "Transforming ideas into interactive experiences.",
-    "Building technology that connects people.",
-    "Turning innovation into impact.",
-    "Designing intelligent and accessible systems.",
-    "Coding with curiosity, clarity, and creativity."
-  ];
-
-  const [currentQuote, setCurrentQuote] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentQuote((prev) => (prev + 1) % quotes.length);
-    }, 4000);
-    return () => clearInterval(interval);
-  }, []);
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -43,16 +25,9 @@ export const HeroSection = ({
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden py-20">
       <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-background to-pink-900/20" />
-      
-      <div className="absolute inset-0 opacity-30">
-        <ThreeScene />
-      </div>
-
-      {/* Subtle spotlight glow behind image */}
-      <div className="absolute right-[10%] top-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gradient-to-br from-purple-500/20 via-pink-500/20 to-transparent rounded-full blur-[150px] opacity-20" />
 
       <div className="relative z-10 w-full max-w-7xl mx-auto px-6">
-        <div className="flex flex-col-reverse lg:flex-row items-center justify-center gap-10 lg:gap-12">
+        <div className="flex flex-col-reverse lg:flex-row items-center justify-center lg:gap-2">
           
           {/* Left Section - Text Content */}
           <motion.div 
@@ -69,7 +44,7 @@ export const HeroSection = ({
               className="space-y-2"
             >
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
-                ✨ Hi, I'm{' '}
+                Hi, I'm{' '}
                 <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent block mt-1">
                   Mohan Prasath K
                 </span>
@@ -85,11 +60,11 @@ export const HeroSection = ({
             >
               <ReactTyped
                 strings={[
+                  "Building Intelligent Systems",
+                  "Creating Interactive Experiences",
                   "Full Stack Developer",
                   "AI Developer",
-                  "Tech Explorer",
-                  "Building Ideas → Into Reality",
-                  "Creating Intelligent Systems"
+                  "Turning Ideas Into Reality"
                 ]}
                 typeSpeed={50}
                 backSpeed={30}
@@ -97,32 +72,11 @@ export const HeroSection = ({
               />
             </motion.div>
 
-            {/* Dynamic Rotating Quotes */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6, duration: 0.8 }}
-              className="min-h-[50px] flex items-center justify-center lg:justify-start pt-2"
-            >
-              <AnimatePresence mode="wait">
-                <motion.p
-                  key={currentQuote}
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -10 }}
-                  transition={{ duration: 0.5 }}
-                  className="text-base md:text-lg text-foreground/70 italic leading-relaxed"
-                >
-                  "{quotes[currentQuote]}"
-                </motion.p>
-              </AnimatePresence>
-            </motion.div>
-
             {/* Location Info */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.8, duration: 0.8 }}
+              transition={{ delay: 0.6, duration: 0.8 }}
               className="text-sm md:text-base text-foreground/60 leading-relaxed pt-2 space-y-1"
             >
               <div>🎓 Bishop Heber College, Trichy</div>
@@ -133,7 +87,7 @@ export const HeroSection = ({
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1, duration: 0.8 }}
+              transition={{ delay: 0.8, duration: 0.8 }}
               className="flex justify-center lg:justify-start pt-6"
             >
               <motion.a
@@ -157,7 +111,7 @@ export const HeroSection = ({
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.3, duration: 0.8 }}
-            className="flex-shrink-0 max-w-[350px]"
+            className="flex-shrink-0"
           >
             <motion.div
               animate={{
@@ -170,9 +124,9 @@ export const HeroSection = ({
                   ease: "easeInOut"
                 }
               }}
-              className="relative w-64 h-80 md:w-72 md:h-96 rounded-2xl bg-gradient-to-br from-purple-500/80 via-pink-500/80 to-cyan-500/80 p-[2px] shadow-xl"
+              className="relative w-64 h-80 md:w-72 md:h-96 rounded-xl bg-gradient-to-br from-purple-500/80 via-pink-500/80 to-cyan-500/80 p-[2px] shadow-xl"
             >
-              <div className="w-full h-full rounded-2xl overflow-hidden bg-background">
+              <div className="w-full h-full rounded-xl overflow-hidden bg-background">
                 <img 
                   src={profileImage} 
                   alt="Mohan Prasath K" 

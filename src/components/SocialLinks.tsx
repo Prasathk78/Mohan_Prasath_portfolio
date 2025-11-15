@@ -14,7 +14,7 @@ export const SocialLinks = () => {
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, delay: 0.5 }}
-      className="fixed bottom-8 left-8 z-50 hidden lg:flex flex-col gap-4"
+      className="fixed bottom-8 left-8 z-40 hidden lg:flex flex-col gap-4"
     >
       {socialLinks.map((link, index) => (
         <motion.a
