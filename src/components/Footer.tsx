@@ -1,10 +1,12 @@
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Github, Linkedin, Instagram } from 'lucide-react';
+import { Mail, Phone, MapPin, Github, Linkedin, Instagram, MessageCircle } from 'lucide-react';
 
 const socialLinks = [
   { icon: Github, href: 'https://github.com/Prasathk78', label: 'GitHub' },
   { icon: Linkedin, href: 'https://www.linkedin.com/in/mohanprasathk28', label: 'LinkedIn' },
   { icon: Instagram, href: 'https://www.instagram.com/mohan_prasath_k', label: 'Instagram' },
+  { icon: MessageCircle, href: 'https://wa.me/919876543210', label: 'WhatsApp' },
+  { icon: Mail, href: 'mailto:mohanprasathk28@gmail.com', label: 'Email' },
 ];
 
 const contactInfo = [
