@@ -140,34 +140,6 @@ export const FeedbackSection = () => {
                 I partner with global teams to architect QA accelerators, orchestrate Tosca automation, and cultivate seamless delivery pipelines.
               </p>
 
-              <div className="space-y-4 pt-4">
-                <a 
-                  href="tel:+919876543210"
-                  className="flex items-center gap-3 text-foreground/80 hover:text-purple-400 transition-colors group"
-                >
-                  <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-purple-500/20 to-pink-500/20 border border-purple-500/30 flex items-center justify-center group-hover:border-purple-500/50 transition-colors">
-                    <span className="text-xl">📱</span>
-                  </div>
-                  <span className="text-base">+91 9876543210</span>
-                </a>
-                
-                <a 
-                  href="mailto:mohanprasathk28@gmail.com"
-                  className="flex items-center gap-3 text-foreground/80 hover:text-purple-400 transition-colors group"
-                >
-                  <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-purple-500/20 to-pink-500/20 border border-purple-500/30 flex items-center justify-center group-hover:border-purple-500/50 transition-colors">
-                    <span className="text-xl">✉️</span>
-                  </div>
-                  <span className="text-base">mohanprasathk28@gmail.com</span>
-                </a>
-                
-                <div className="flex items-center gap-3 text-foreground/80">
-                  <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-purple-500/20 to-pink-500/20 border border-purple-500/30 flex items-center justify-center">
-                    <span className="text-xl">📍</span>
-                  </div>
-                  <span className="text-base">Trichy, Tamil Nadu, India</span>
-                </div>
-              </div>
             </motion.div>
 
             {/* Right Section - Contact Form */}
