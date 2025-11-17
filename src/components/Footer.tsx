@@ -4,14 +4,14 @@ import { Mail, Phone, MapPin, Github, Linkedin, Instagram, MessageCircle } from 
 const socialLinks = [
   { icon: Github, href: 'https://github.com/Prasathk78', label: 'GitHub' },
   { icon: Linkedin, href: 'https://www.linkedin.com/in/mohanprasathk28', label: 'LinkedIn' },
-  { icon: Instagram, href: 'https://www.instagram.com/mohan_prasath_k', label: 'Instagram' },
-  { icon: MessageCircle, href: 'https://wa.me/919876543210', label: 'WhatsApp' },
-  { icon: Mail, href: 'mailto:mohanprasathk28@gmail.com', label: 'Email' },
+  { icon: Instagram, href: 'https://www.instagram.com/praxath_mk?igsh=MTM0bDFjaTc4bm93dg==', label: 'Instagram' },
+  { icon: MessageCircle, href: 'https://wa.me/917904950447', label: 'WhatsApp' },
+  { icon: Mail, href: 'mailto:mohanprasathk78@gmail.com', label: 'Email' },
 ];
 
 const contactInfo = [
-  { icon: Mail, text: 'mohanprasathk28@gmail.com', href: 'mailto:mohanprasathk28@gmail.com' },
-  { icon: Phone, text: '+91 9876543210', href: 'tel:+919876543210' },
+  { icon: Mail, text: 'mohanprasathk78@gmail.com', href: 'mailto:mohanprasathk78@gmail.com' },
+  { icon: Phone, text: '+91 7904950447', href: 'tel:+917904950447' },
   { icon: MapPin, text: 'Trichy, Tamil Nadu, India', href: null },
 ];
 

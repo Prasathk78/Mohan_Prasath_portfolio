@@ -124,7 +124,7 @@ export const HeroSection = ({
                   ease: "easeInOut"
                 }
               }}
-              className="relative w-64 h-80 md:w-72 md:h-96 rounded-xl bg-gradient-to-br from-purple-500/80 via-pink-500/80 to-cyan-500/80 p-[2px] shadow-xl"
+              className="relative w-64 h-80 md:w-96 md:h-[500px] lg:w-[500px] lg:h-[600px] rounded-xl bg-gradient-to-br from-purple-500/80 via-pink-500/80 to-cyan-500/80 p-[2px] shadow-xl"
             >
               <div className="w-full h-full rounded-xl overflow-hidden bg-background">
                 <img 
