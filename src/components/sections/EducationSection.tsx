@@ -60,6 +60,7 @@ const articles = [
 ];
 
 
+
 export const EducationSection = () => {
   return (
     <section id="education" className="min-h-screen py-20 px-6">
