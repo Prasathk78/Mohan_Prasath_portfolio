@@ -18,12 +18,6 @@ const education = [
 
 const experience = [
   {
-    title: 'Research Author',
-    company: 'Telematique Journal',
-    period: 'Accepted October 11, 2025',
-    description: 'Co-authored paper "SeeForMe: Real-Time Object Detection and Captioning for Visually Impaired Users Using YOLOv5 and BLIP" (ISSN: 1856-4194)',
-  },
-  {
     title: 'Full Stack Intern',
     company: 'Sphere Heads, Trichy',
     period: 'June 2025',
