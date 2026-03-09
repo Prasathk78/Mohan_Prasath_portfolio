@@ -18,7 +18,7 @@ const profiles = [
     description: 'Professional network and career updates',
     icon: Linkedin,
     color: 'from-blue-600 to-blue-500',
-    link: 'https://www.linkedin.com/in/mohanprasathk28',
+    link: 'https://www.linkedin.com/in/mohanprasathk28?utm_source=share_via&utm_content=profile&utm_medium=member_android',
     stats: 'Connect with me',
   },
   {
