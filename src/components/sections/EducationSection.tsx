@@ -215,6 +215,8 @@ export const EducationSection = () => {
                   </h3>
                   <motion.a
                     href={article.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
                     className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors mt-2 md:mt-0"

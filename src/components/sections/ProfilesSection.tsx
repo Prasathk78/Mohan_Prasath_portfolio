@@ -62,6 +62,8 @@ export const ProfilesSection = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               whileHover={{ scale: 1.05, y: -5 }}
               whileTap={{ scale: 0.95 }}
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-accent/50 backdrop-blur-sm rounded-xl p-6 border border-border shadow-lg hover:shadow-purple-500/20 transition-all group block"
             >
               <div className="flex items-center gap-4 mb-4">

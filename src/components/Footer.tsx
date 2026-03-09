@@ -3,7 +3,7 @@ import { Mail, Phone, MapPin, Github, Linkedin, Instagram, MessageCircle } from 
 
 const socialLinks = [
   { icon: Github, href: 'https://github.com/Prasathk78', label: 'GitHub' },
-  { icon: Linkedin, href: 'https://www.linkedin.com/in/mohanprasathk28', label: 'LinkedIn' },
+  { icon: Linkedin, href: 'https://www.linkedin.com/in/mohanprasathk28?utm_source=share_via&utm_content=profile&utm_medium=member_android', label: 'LinkedIn' },
   { icon: Instagram, href: 'https://www.instagram.com/praxath_mk?igsh=MTM0bDFjaTc4bm93dg==', label: 'Instagram' },
   { icon: MessageCircle, href: 'https://wa.me/917904950447', label: 'WhatsApp' },
   { icon: Mail, href: 'mailto:mohanprasathk78@gmail.com', label: 'Email' },
