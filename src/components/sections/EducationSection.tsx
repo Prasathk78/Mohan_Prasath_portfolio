@@ -51,7 +51,7 @@ const articles = [
     excerpt: 'Co-authored research paper on AI-powered accessibility using YOLOv5 and BLIP. Published in Telematique Journal (ISSN: 1856-4194).',
     date: '2025-10-11',
     readTime: '8 min read',
-    link: 'https://telematique.org',
+    link: 'https://www.provinciajournal.com/index.php/telematique/article/view/2213',
     tags: ['AI', 'Research', 'Accessibility'],
   }
 ];
