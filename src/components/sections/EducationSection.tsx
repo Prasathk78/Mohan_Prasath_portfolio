@@ -18,12 +18,6 @@ const education = [
 
 const experience = [
   {
-    title: 'Research Author',
-    company: 'Telematique Journal',
-    period: 'Accepted October 11, 2025',
-    description: 'Co-authored paper "SeeForMe: Real-Time Object Detection and Captioning for Visually Impaired Users Using YOLOv5 and BLIP" (ISSN: 1856-4194)',
-  },
-  {
     title: 'Full Stack Intern',
     company: 'Sphere Heads, Trichy',
     period: 'June 2025',
@@ -38,14 +32,17 @@ const experience = [
 ];
 
 const certifications = [
+  { name: 'Master Full Stack Development in 6 Months Masterclass – upGrad', year: '2023' },
   { name: 'Introduction to Artificial Intelligence – Great Learning', year: '2024' },
   { name: 'Complete Python Pro Bootcamp – Udemy', year: '2024' },
   { name: 'Mastering Advanced ChatGPT Prompt Engineering – Udemy', year: '2024' },
   { name: 'Automated ML with Google Cloud – Udemy', year: '2024' },
   { name: 'Google Ads Search Engine Campaign – Coursera', year: '2024' },
   { name: 'Creating Promotional Videos using Canva – Coursera', year: '2024' },
-  { name: 'Web Development Internship – ASPA, Tuticorin', year: '2025' },
-  { name: 'Full Stack Internship – Sphere Heads, Trichy', year: '2025' },
+  { name: 'Describe Cloud Computing – Microsoft', year: '2025' },
+  { name: 'Guided Project – Use GitHub to Manage File Updates – Microsoft', year: '2025' },
+  { name: 'Deploy and Manage Active Directory Domain Services – Microsoft', year: '2025' },
+  { name: 'International Conference on Intelligent Computing Systems (ICICS) – Bishop Heber College', year: '2025' },
 ];
 
 const articles = [
@@ -54,7 +51,7 @@ const articles = [
     excerpt: 'Co-authored research paper on AI-powered accessibility using YOLOv5 and BLIP. Published in Telematique Journal (ISSN: 1856-4194).',
     date: '2025-10-11',
     readTime: '8 min read',
-    link: 'https://telematique.org',
+    link: 'https://www.provinciajournal.com/index.php/telematique/article/view/2213',
     tags: ['AI', 'Research', 'Accessibility'],
   }
 ];
@@ -218,6 +215,8 @@ export const EducationSection = () => {
                   </h3>
                   <motion.a
                     href={article.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
                     className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors mt-2 md:mt-0"

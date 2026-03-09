@@ -18,7 +18,7 @@ const profiles = [
     description: 'Professional network and career updates',
     icon: Linkedin,
     color: 'from-blue-600 to-blue-500',
-    link: 'https://www.linkedin.com/in/mohanprasathk28',
+    link: 'https://www.linkedin.com/in/mohanprasathk28?utm_source=share_via&utm_content=profile&utm_medium=member_android',
     stats: 'Connect with me',
   },
   {
@@ -62,6 +62,8 @@ export const ProfilesSection = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               whileHover={{ scale: 1.05, y: -5 }}
               whileTap={{ scale: 0.95 }}
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-accent/50 backdrop-blur-sm rounded-xl p-6 border border-border shadow-lg hover:shadow-purple-500/20 transition-all group block"
             >
               <div className="flex items-center gap-4 mb-4">
