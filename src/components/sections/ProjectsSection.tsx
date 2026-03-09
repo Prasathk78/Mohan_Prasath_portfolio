@@ -111,16 +111,9 @@ export const ProjectsSection = () => {
 
                 <div className="flex gap-4">
                   <motion.a
-                    href={project.demoLink}
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.9 }}
-                    className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    <ExternalLink size={16} />
-                    Demo
-                  </motion.a>
-                  <motion.a
                     href={project.codeLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
                     className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
