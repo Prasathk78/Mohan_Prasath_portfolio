@@ -27,7 +27,7 @@ const profiles = [
     description: 'Behind the scenes and lifestyle',
     icon: Instagram,
     color: 'from-pink-600 to-purple-600',
-    link: 'https://www.instagram.com/praxath_mk?igsh=MTM0bDFjaTc4bm93dg==',
+    link: 'https://www.instagram.com/praxath_mk',
     stats: 'Follow me',
   },
 ];

@@ -4,8 +4,8 @@ import { Github, Linkedin, Instagram } from 'lucide-react';
 
 const socialLinks = [
   { icon: Github, href: 'https://github.com/Prasathk78', label: 'GitHub', gradient: 'from-gray-600 to-gray-800' },
-  { icon: Linkedin, href: 'https://www.linkedin.com/in/mohanprasathk28?utm_source=share_via&utm_content=profile&utm_medium=member_android', label: 'LinkedIn', gradient: 'from-blue-500 to-blue-700' },
-  { icon: Instagram, href: 'https://www.instagram.com/praxath_mk?igsh=MTM0bDFjaTc4bm93dg==', label: 'Instagram', gradient: 'from-pink-500 via-purple-500 to-orange-500' },
+  { icon: Linkedin, href: 'https://www.linkedin.com/in/mohanprasathk28', label: 'LinkedIn', gradient: 'from-blue-500 to-blue-700' },
+  { icon: Instagram, href: 'https://www.instagram.com/praxath_mk', label: 'Instagram', gradient: 'from-pink-500 via-purple-500 to-orange-500' },
 ];
 
 export const SocialLinks = () => {
