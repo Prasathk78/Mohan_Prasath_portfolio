@@ -8,14 +8,9 @@ const skills = [
     technologies: 'Python, NLP, Computer Vision, YOLOv5, BLIP',
   },
   {
-    category: 'Frontend Development',
-    percentage: 80,
-    technologies: 'HTML, CSS, JavaScript, React.js, Bootstrap',
-  },
-  {
-    category: 'Backend Development',
+    category: 'Full Stack MERN Development',
     percentage: 90,
-    technologies: 'Node.js, Express.js, Flask, API Development',
+    technologies: 'MongoDB, Express.js, React.js, Node.js',
   },
   {
     category: 'DBMS',
@@ -23,14 +18,19 @@ const skills = [
     technologies: 'MongoDB, SQL, Data Modeling',
   },
   {
-    category: 'Networking',
-    percentage: 55,
-    technologies: 'Basic Networking Concepts, Protocols',
+    category: 'Cloud and Data Management',
+    percentage: 80,
+    technologies: 'Cloud Computing, Data Pipelines, Storage Solutions',
   },
   {
     category: 'AI & No-Code Development',
     percentage: 90,
     technologies: 'Cursor.ai, Lovable.ai, ChatGPT, Wix, WordPress, Canva Automation Tools',
+  },
+  {
+    category: 'Soft Skills',
+    percentage: 90,
+    technologies: 'Marketing, Presentations, Influencing / Persuasion, Communication, Organization',
   },
 ];
 

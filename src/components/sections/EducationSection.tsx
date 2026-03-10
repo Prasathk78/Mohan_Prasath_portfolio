@@ -32,7 +32,6 @@ const experience = [
 ];
 
 const certifications = [
-  { name: 'Master Full Stack Development in 6 Months Masterclass – upGrad', year: '2023' },
   { name: 'Introduction to Artificial Intelligence – Great Learning', year: '2024' },
   { name: 'Complete Python Pro Bootcamp – Udemy', year: '2024' },
   { name: 'Mastering Advanced ChatGPT Prompt Engineering – Udemy', year: '2024' },
