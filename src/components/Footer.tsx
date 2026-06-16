@@ -1,11 +1,10 @@
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Github, Linkedin, Instagram, MessageCircle, Download } from 'lucide-react';
+import { Mail, Phone, MapPin, Github, Linkedin, Instagram } from 'lucide-react';
 
 const socialLinks = [
   { icon: Github, href: 'https://github.com/Prasathk78', label: 'GitHub' },
-  { icon: Linkedin, href: 'https://www.linkedin.com/in/mohanprasathk28', label: 'LinkedIn' },
-  { icon: Instagram, href: 'https://www.instagram.com/praxath_mk', label: 'Instagram' },
-  { icon: MessageCircle, href: 'https://wa.me/917904950447', label: 'WhatsApp' },
+  { icon: Linkedin, href: 'https://linkedin.com/in/mohanprasathk28', label: 'LinkedIn' },
+  { icon: Instagram, href: 'https://instagram.com/praxath_mk', label: 'Instagram' },
   { icon: Mail, href: 'mailto:mohanprasathk78@gmail.com', label: 'Email' },
 ];
 
@@ -40,6 +39,8 @@ export const Footer = () => {
                   {info.href ? (
                     <a
                       href={info.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="text-foreground/80 hover:text-primary transition-colors text-sm"
                     >
                       {info.text}
@@ -71,14 +72,15 @@ export const Footer = () => {
               </div>
 
               <motion.a
-                href="#"
-                download="Mohan-Prasath-K-Resume.pdf"
+                href="mailto:mohanprasathk78@gmail.com?subject=Resume Request"
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="px-5 py-2 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full text-white text-sm font-semibold flex items-center gap-2 hover:from-purple-600 hover:to-pink-600 transition-all shadow-md"
               >
-                <Download size={16} />
-                Download Resume
+                <Mail size={16} />
+                Request Resume
               </motion.a>
             </div>
           </div>
@@ -86,7 +88,7 @@ export const Footer = () => {
           {/* Copyright */}
           <div className="text-center pt-4 border-t border-border/20">
             <p className="text-foreground/50 text-xs">
-              © Copyright Mohan Prasath K – All Rights Reserved
+              &copy; Copyright Mohan Prasath K &ndash; All Rights Reserved
             </p>
           </div>
         </motion.div>

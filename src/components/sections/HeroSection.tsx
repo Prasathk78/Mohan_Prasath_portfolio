@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ChevronDown, Download } from 'lucide-react';
+import { ChevronDown, Mail } from 'lucide-react';
 import profileImage from '@/assets/profile.jpg';
 import { ReactTyped } from 'react-typed';
 interface HeroSectionProps {
@@ -83,7 +83,7 @@ export const HeroSection = ({
               <div>📍 Trichy, Tamil Nadu, India</div>
             </motion.div>
 
-            {/* Download Button */}
+            {/* Request Resume Button */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -91,8 +91,9 @@ export const HeroSection = ({
               className="flex justify-center lg:justify-start pt-6"
             >
               <motion.a
-                href="#"
-                download="Mohan-Prasath-K-Resume.pdf"
+                href="mailto:mohanprasathk78@gmail.com?subject=Resume Request"
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{
                   scale: 1.05,
                   boxShadow: '0 0 30px rgba(139, 92, 246, 0.5)'
@@ -100,8 +101,8 @@ export const HeroSection = ({
                 whileTap={{ scale: 0.95 }}
                 className="px-8 py-3 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full text-white font-semibold flex items-center gap-2 hover:from-purple-600 hover:to-pink-600 transition-all shadow-lg"
               >
-                <Download size={20} />
-                Download Resume
+                <Mail size={20} />
+                Request Resume
               </motion.a>
             </motion.div>
           </motion.div>
