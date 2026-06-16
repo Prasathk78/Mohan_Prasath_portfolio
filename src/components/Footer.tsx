@@ -72,8 +72,9 @@ export const Footer = () => {
               </div>
 
               <motion.a
-                href="/resume.pdf"
-                download="Mohan_Prasath_K_Resume.pdf"
+                href="https://drive.google.com/file/d/1v3AriYgEfjQrYkqy4Olh3quTZo2_zrZq/view?usp=drive_link"
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="px-5 py-2 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full text-white text-sm font-semibold flex items-center gap-2 hover:from-purple-600 hover:to-pink-600 transition-all shadow-md"

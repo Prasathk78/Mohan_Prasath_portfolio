@@ -91,8 +91,9 @@ export const HeroSection = ({
               className="flex justify-center lg:justify-start pt-6"
             >
               <motion.a
-                href="/resume.pdf"
-                download="Mohan_Prasath_K_Resume.pdf"
+                href="https://drive.google.com/file/d/1v3AriYgEfjQrYkqy4Olh3quTZo2_zrZq/view?usp=drive_link"
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{
                   scale: 1.05,
                   boxShadow: '0 0 30px rgba(139, 92, 246, 0.5)'
