@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Github, Linkedin, Instagram } from 'lucide-react';
+import { Mail, Phone, MapPin, Github, Linkedin, Instagram, Download } from 'lucide-react';
 
 const socialLinks = [
   { icon: Github, href: 'https://github.com/Prasathk78', label: 'GitHub' },
@@ -72,15 +72,14 @@ export const Footer = () => {
               </div>
 
               <motion.a
-                href="mailto:mohanprasathk78@gmail.com?subject=Resume Request"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/resume.pdf"
+                download="Mohan_Prasath_K_Resume.pdf"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="px-5 py-2 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full text-white text-sm font-semibold flex items-center gap-2 hover:from-purple-600 hover:to-pink-600 transition-all shadow-md"
               >
-                <Mail size={16} />
-                Request Resume
+                <Download size={16} />
+                Download Resume
               </motion.a>
             </div>
           </div>

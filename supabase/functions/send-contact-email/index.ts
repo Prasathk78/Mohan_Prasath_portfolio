@@ -1,17 +1,49 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
-import { Resend } from "npm:resend@2.0.0";
-
-const resend = new Resend(Deno.env.get("RESEND_API_KEY"));
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
   "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
 };
 
+const GATEWAY_URL = "https://connector-gateway.lovable.dev/google_mail/gmail/v1";
+const RECIPIENT = "mohanprasathk78@gmail.com";
+
 interface ContactEmailRequest {
   name: string;
   email: string;
   message: string;
+}
+
+function encodeBase64Url(input: string): string {
+  const bytes = new TextEncoder().encode(input);
+  let binary = "";
+  for (const b of bytes) binary += String.fromCharCode(b);
+  return btoa(binary).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
+}
+
+function buildRawEmail(name: string, email: string, message: string): string {
+  const safeName = name.replace(/[\r\n]/g, " ");
+  const subject = `New Portfolio Message from ${safeName}`;
+  const body = [
+    `New message from your portfolio contact form.`,
+    ``,
+    `Name: ${name}`,
+    `Email: ${email}`,
+    ``,
+    `Message:`,
+    message,
+  ].join("\r\n");
+
+  const headers = [
+    `To: ${RECIPIENT}`,
+    `From: ${RECIPIENT}`,
+    `Reply-To: ${email}`,
+    `Subject: ${subject}`,
+    `MIME-Version: 1.0`,
+    `Content-Type: text/plain; charset="UTF-8"`,
+  ].join("\r\n");
+
+  return encodeBase64Url(`${headers}\r\n\r\n${body}`);
 }
 
 const handler = async (req: Request): Promise<Response> => {
@@ -22,52 +54,58 @@ const handler = async (req: Request): Promise<Response> => {
   try {
     const { name, email, message }: ContactEmailRequest = await req.json();
 
-    console.log("Sending contact email:", { name, email });
+    if (!name || !email || !message) {
+      return new Response(JSON.stringify({ error: "Missing required fields" }), {
+        status: 400,
+        headers: { "Content-Type": "application/json", ...corsHeaders },
+      });
+    }
 
-    const emailResponse = await resend.emails.send({
-      from: "Portfolio Contact <onboarding@resend.dev>",
-      to: ["mohanprasathk78@gmail.com"],
-      replyTo: email,
-      subject: `New Portfolio Contact from ${name}`,
-      html: `
-        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
-          <h2 style="color: #8b5cf6; border-bottom: 2px solid #8b5cf6; padding-bottom: 10px;">
-            New Contact Form Submission
-          </h2>
-          <div style="margin: 20px 0; padding: 15px; background: #f9fafb; border-radius: 8px;">
-            <p style="margin: 10px 0;"><strong>Name:</strong> ${name}</p>
-            <p style="margin: 10px 0;"><strong>Email:</strong> ${email}</p>
-          </div>
-          <div style="margin: 20px 0;">
-            <h3 style="color: #374151;">Message:</h3>
-            <p style="color: #4b5563; line-height: 1.6; white-space: pre-wrap;">${message}</p>
-          </div>
-          <hr style="border: none; border-top: 1px solid #e5e7eb; margin: 20px 0;">
-          <p style="color: #6b7280; font-size: 12px; text-align: center;">
-            This email was sent from your portfolio contact form
-          </p>
-        </div>
-      `,
+    const lovableApiKey = Deno.env.get("LOVABLE_API_KEY");
+    const gmailApiKey = Deno.env.get("GOOGLE_MAIL_API_KEY");
+
+    if (!lovableApiKey || !gmailApiKey) {
+      console.error("Missing required keys for Gmail gateway");
+      return new Response(JSON.stringify({ error: "Email service not configured" }), {
+        status: 500,
+        headers: { "Content-Type": "application/json", ...corsHeaders },
+      });
+    }
+
+    const raw = buildRawEmail(name, email, message);
+
+    const gmailResponse = await fetch(`${GATEWAY_URL}/users/me/messages/send`, {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${lovableApiKey}`,
+        "X-Connection-Api-Key": gmailApiKey,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ raw }),
     });
 
-    console.log("Email sent successfully:", emailResponse);
+    const responseText = await gmailResponse.text();
 
-    return new Response(JSON.stringify(emailResponse), {
+    if (!gmailResponse.ok) {
+      console.error("Gmail gateway error", gmailResponse.status, responseText);
+      return new Response(
+        JSON.stringify({ error: "Failed to send email", status: gmailResponse.status, details: responseText }),
+        { status: 502, headers: { "Content-Type": "application/json", ...corsHeaders } },
+      );
+    }
+
+    console.log("Email sent via Gmail:", responseText);
+
+    return new Response(JSON.stringify({ success: true }), {
       status: 200,
-      headers: {
-        "Content-Type": "application/json",
-        ...corsHeaders,
-      },
+      headers: { "Content-Type": "application/json", ...corsHeaders },
     });
   } catch (error: any) {
     console.error("Error in send-contact-email function:", error);
-    return new Response(
-      JSON.stringify({ error: error.message }),
-      {
-        status: 500,
-        headers: { "Content-Type": "application/json", ...corsHeaders },
-      }
-    );
+    return new Response(JSON.stringify({ error: error.message }), {
+      status: 500,
+      headers: { "Content-Type": "application/json", ...corsHeaders },
+    });
   }
 };
 
