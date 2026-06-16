@@ -36,8 +36,8 @@ export const FeedbackSection = () => {
       setFormData({ name: '', email: '', message: '' });
       
       toast({
-        title: "Message sent!",
-        description: "Thank you for reaching out. I'll get back to you soon.",
+        title: "Thanks!",
+        description: "I'll get back to you soon.",
       });
     } catch (error) {
       if (error instanceof z.ZodError) {
@@ -49,8 +49,8 @@ export const FeedbackSection = () => {
       } else {
         console.error('Error sending message:', error);
         toast({
-          title: "Error",
-          description: "Failed to send message. Please try again.",
+          title: "Something went wrong",
+          description: "Please email me directly at mohanprasathk78@gmail.com.",
           variant: "destructive"
         });
       }
@@ -125,19 +125,19 @@ export const FeedbackSection = () => {
             >
               <div className="inline-block">
                 <span className="px-4 py-2 bg-gradient-to-r from-purple-500/20 to-pink-500/20 border border-purple-500/30 rounded-full text-sm text-purple-400 font-medium">
-                  OPEN FOR OPPORTUNITIES
+                  OPEN TO OPPORTUNITIES
                 </span>
               </div>
               
               <h2 className="text-3xl md:text-4xl font-bold leading-tight">
-                Let's build resilient{' '}
+                Let's build{' '}
                 <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent">
-                  digital experiences
+                  something meaningful together
                 </span>
               </h2>
               
               <p className="text-foreground/70 text-base md:text-lg leading-relaxed">
-                I partner with global teams to architect QA accelerators, orchestrate Tosca automation, and cultivate seamless delivery pipelines.
+                I'm a 2026 BCA graduate from Bishop Heber College, Trichy, with hands-on experience in full-stack development and AI/ML. I've published research in an international journal and built real-world projects. I'm actively looking for fresher roles in software development, AI/ML, or related fields. If you have an opportunity or just want to connect, reach out.
               </p>
 
             </motion.div>

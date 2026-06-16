@@ -5,7 +5,7 @@ const education = [
   {
     degree: 'Bachelor of Computer Applications (BCA)',
     institution: 'Bishop Heber College, Trichy',
-    period: 'March 2023 - April 2026 (Expected)',
+    period: 'March 2023 - April 2026 — Completed',
     description: 'Specializing in AI, web development, and full-stack technologies',
   },
   {
