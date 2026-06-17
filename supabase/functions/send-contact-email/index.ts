@@ -7,6 +7,8 @@ const corsHeaders = {
 
 const GATEWAY_URL = "https://connector-gateway.lovable.dev/google_mail/gmail/v1";
 const RECIPIENT = "mohanprasathk78@gmail.com";
+const GENERIC_ERROR = "Something went wrong. Please try again.";
+const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 interface ContactEmailRequest {
   name: string;
@@ -23,6 +25,7 @@ function encodeBase64Url(input: string): string {
 
 function buildRawEmail(name: string, email: string, message: string): string {
   const safeName = name.replace(/[\r\n]/g, " ");
+  const safeEmail = email.replace(/[\r\n]/g, "");
   const subject = `New Portfolio Message from ${safeName}`;
   const body = [
     `New message from your portfolio contact form.`,
@@ -37,7 +40,7 @@ function buildRawEmail(name: string, email: string, message: string): string {
   const headers = [
     `To: ${RECIPIENT}`,
     `From: ${RECIPIENT}`,
-    `Reply-To: ${email}`,
+    `Reply-To: ${safeEmail}`,
     `Subject: ${subject}`,
     `MIME-Version: 1.0`,
     `Content-Type: text/plain; charset="UTF-8"`,
@@ -52,10 +55,17 @@ const handler = async (req: Request): Promise<Response> => {
   }
 
   try {
-    const { name, email, message }: ContactEmailRequest = await req.json();
+    const body: ContactEmailRequest = await req.json();
+    const name = typeof body.name === "string" ? body.name.trim() : "";
+    const email = typeof body.email === "string" ? body.email.trim() : "";
+    const message = typeof body.message === "string" ? body.message.trim() : "";
 
-    if (!name || !email || !message) {
-      return new Response(JSON.stringify({ error: "Missing required fields" }), {
+    if (
+      name.length === 0 || name.length > 100 ||
+      email.length === 0 || email.length > 255 || !EMAIL_REGEX.test(email) ||
+      message.length === 0 || message.length > 2000
+    ) {
+      return new Response(JSON.stringify({ error: "Invalid input." }), {
         status: 400,
         headers: { "Content-Type": "application/json", ...corsHeaders },
       });
@@ -66,7 +76,7 @@ const handler = async (req: Request): Promise<Response> => {
 
     if (!lovableApiKey || !gmailApiKey) {
       console.error("Missing required keys for Gmail gateway");
-      return new Response(JSON.stringify({ error: "Email service not configured" }), {
+      return new Response(JSON.stringify({ error: GENERIC_ERROR }), {
         status: 500,
         headers: { "Content-Type": "application/json", ...corsHeaders },
       });
@@ -89,7 +99,7 @@ const handler = async (req: Request): Promise<Response> => {
     if (!gmailResponse.ok) {
       console.error("Gmail gateway error", gmailResponse.status, responseText);
       return new Response(
-        JSON.stringify({ error: "Failed to send email", status: gmailResponse.status, details: responseText }),
+        JSON.stringify({ error: GENERIC_ERROR }),
         { status: 502, headers: { "Content-Type": "application/json", ...corsHeaders } },
       );
     }
@@ -102,7 +112,7 @@ const handler = async (req: Request): Promise<Response> => {
     });
   } catch (error: any) {
     console.error("Error in send-contact-email function:", error);
-    return new Response(JSON.stringify({ error: error.message }), {
+    return new Response(JSON.stringify({ error: GENERIC_ERROR }), {
       status: 500,
       headers: { "Content-Type": "application/json", ...corsHeaders },
     });
