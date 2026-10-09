@@ -71,8 +71,8 @@ const projects: Project[] = [
   },
   {
     title: 'Projora',
-    description: 'Project showcase website.',
-    tags: [],
+    description: 'A professional project support platform offering college projects, documentation, research support, website development, and custom digital services with clear communication and quality delivery.',
+    tags: ['Custom Quotes', 'Fast Delivery', 'Student-Friendly', 'Founders & Businesses'],
     demoLink: 'https://projora.netlify.app/',
     icon: LayoutGrid,
   },
