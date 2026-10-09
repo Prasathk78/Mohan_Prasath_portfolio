@@ -6,6 +6,7 @@ import { SocialLinks } from '../components/SocialLinks';
 import { HeroSection } from '../components/sections/HeroSection';
 import { AboutSection } from '../components/sections/AboutSection';
 import { SkillsSection } from '../components/sections/SkillsSection';
+import { WorkExperienceSection } from '../components/sections/WorkExperienceSection';
 import { ProjectsSection } from '../components/sections/ProjectsSection';
 import { EducationSection } from '../components/sections/EducationSection';
 import { ProfilesSection } from '../components/sections/ProfilesSection';
@@ -19,7 +20,7 @@ const Index = () => {
   // Scroll spy - detect which section is in view
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['hero', 'about', 'skills', 'education', 'projects', 'profiles', 'feedback', 'contact'];
+      const sections = ['hero', 'about', 'skills', 'education', 'experience', 'projects', 'profiles', 'feedback', 'contact'];
       const scrollPosition = window.scrollY + 100;
 
       for (const sectionId of sections) {
@@ -58,6 +59,7 @@ const Index = () => {
           <AboutSection />
           <SkillsSection />
           <EducationSection />
+          <WorkExperienceSection />
           <ProjectsSection />
           <ProfilesSection />
           <FeedbackSection />
