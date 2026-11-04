@@ -11,7 +11,7 @@ const responsibilities = [
 
 const tags = [
   'ERP Systems', 'Requirement Analysis', 'Business Process Mapping', 'Cloud-Based Software',
-  'Technical Communication', 'SAP MM/SD (Learning)', 'Python', 'Full-Stack Development',
+  'Technical Communication', 'Python', 'Full-Stack Development',
 ];
 
 export const WorkExperienceSection = () => (
