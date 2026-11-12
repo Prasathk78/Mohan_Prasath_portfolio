@@ -1,17 +1,11 @@
 import { motion } from 'framer-motion';
 import { Briefcase, MapPin, Calendar } from 'lucide-react';
 
-const responsibilities = [
-  'Translate institutional business processes into ERP module requirements and solution mappings.',
-  'Gain exposure to the ERP implementation lifecycle, including requirement blueprinting, configuration, data migration, cloud deployment, user training, go-live, and support.',
-  'Collaborate with product, delivery, and management teams in a software services environment.',
-  'Learn SAP functional concepts, particularly Materials Management (MM) and Sales and Distribution (SD), alongside professional responsibilities.',
-  'Continue developing practical projects using Python and full-stack web development technologies.',
-];
-
-const tags = [
-  'ERP Systems', 'Requirement Analysis', 'Business Process Mapping', 'Cloud-Based Software',
-  'Technical Communication', 'Python', 'Full-Stack Development',
+const contributions = [
+  'Handled 150+ leads from schools and colleges, qualifying each one and following up on time.',
+  'Demonstrated a 34+ module cloud ERP, explaining workflows and features in simple terms.',
+  'Gathered requirements on 10+ client visits and passed issues and enhancement requests to the development team.',
+  'Kept CRM records and quotations accurate, and escalated high-value and partnership leads to senior management.',
 ];
 
 export const WorkExperienceSection = () => (
@@ -44,10 +38,10 @@ export const WorkExperienceSection = () => (
             </div>
             <div>
               <h3 className="text-2xl font-bold text-foreground">Tech Sales Specialist</h3>
-              <p className="text-lg font-medium text-primary">JD Software Pvt Ltd</p>
+              <p className="text-lg font-medium text-primary">JD Software Pvt Ltd – EDUMAAT</p>
               <div className="flex flex-wrap gap-x-4 gap-y-1 mt-2 text-sm text-muted-foreground">
-                <span className="inline-flex items-center gap-1"><MapPin size={14} />Chennai, Tamil Nadu, India</span>
-                <span className="inline-flex items-center gap-1"><Calendar size={14} />July 2026 – Present</span>
+                <span className="inline-flex items-center gap-1"><MapPin size={14} />Chennai</span>
+                <span className="inline-flex items-center gap-1"><Calendar size={14} />Jul 2026 – Present</span>
               </div>
             </div>
           </div>
@@ -60,29 +54,19 @@ export const WorkExperienceSection = () => (
           </span>
         </div>
 
-        <p className="text-foreground/80 leading-relaxed mb-6">
-          Working within an enterprise software company on EDUMAAT, a cloud-based Education ERP platform. Gaining hands-on
-          understanding of ERP product functionality, configuration, deployment, and support while developing technical
-          capabilities and progressing toward software development and SAP-related opportunities.
-        </p>
-
-        <h4 className="font-semibold text-foreground mb-3">Key Responsibilities & Learning</h4>
-        <ul className="space-y-2 mb-6">
-          {responsibilities.map((r) => (
-            <li key={r} className="flex gap-3 text-muted-foreground">
+        <ul className="space-y-3 mb-6">
+          {contributions.map((contribution) => (
+            <li key={contribution} className="flex gap-3 text-muted-foreground">
               <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
-              <span>{r}</span>
+              <span>{contribution}</span>
             </li>
           ))}
         </ul>
 
-        <div className="flex flex-wrap gap-2">
-          {tags.map((t) => (
-            <span key={t} className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm border border-primary/30">
-              {t}
-            </span>
-          ))}
-        </div>
+        <p className="text-foreground/80 leading-relaxed">
+          <span className="font-semibold text-foreground">What I learned: </span>
+          requirement gathering, ERP/SaaS product knowledge, client communication, and working with a CRM.
+        </p>
       </motion.article>
     </div>
   </section>
