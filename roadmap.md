@@ -1,4 +1,4 @@
 - [x] Replace Work Experience with the supplied JD Software / EDUMAAT role details and remove SAP-learning references.
 - [x] Keep Work Experience immediately after Education.
 - [x] Omit project action buttons when their URL is unavailable.
-- [ ] Verify the portfolio preview and confirm the latest build is clean.
+- [x] Verify the portfolio preview and confirm the latest build is clean.
