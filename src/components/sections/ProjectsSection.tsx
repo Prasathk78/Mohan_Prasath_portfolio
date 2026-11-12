@@ -93,32 +93,20 @@ const projects: Project[] = [
 ];
 
 const btnBase =
-  'flex-1 inline-flex items-center justify-center gap-2 px-3 py-2 rounded-lg text-sm font-medium border transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary';
+  'inline-flex items-center justify-center gap-2 px-3 py-2 rounded-lg text-sm font-medium border transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary border-primary/30 bg-primary/10 text-primary hover:bg-primary/20';
 
-const ActionButton = ({ href, label, soonLabel, icon: Icon, project }: { href?: string; label: string; soonLabel: string; icon: LucideIcon; project: string }) =>
-  href ? (
-    <a
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label={`${label} for ${project} (opens in new tab)`}
-      className={`${btnBase} border-primary/30 bg-primary/10 text-primary hover:bg-primary/20`}
-    >
-      <Icon size={16} />
-      {label}
-    </a>
-  ) : (
-    <button
-      type="button"
-      disabled
-      title={`${soonLabel} for ${project}`}
-      aria-label={`${soonLabel} for ${project}`}
-      className={`${btnBase} border-border text-muted-foreground opacity-60 cursor-not-allowed`}
-    >
-      <Icon size={16} />
-      {soonLabel}
-    </button>
-  );
+const ActionLink = ({ href, label, icon: Icon, project }: { href: string; label: string; icon: LucideIcon; project: string }) => (
+  <a
+    href={href}
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label={`${label} for ${project} (opens in new tab)`}
+    className={btnBase}
+  >
+    <Icon size={16} />
+    {label}
+  </a>
+);
 
 export const ProjectsSection = () => {
   return (
@@ -179,10 +167,12 @@ export const ProjectsSection = () => {
                   </div>
                 )}
 
-                <div className="flex gap-3 mt-auto">
-                  <ActionButton href={project.demoLink} label="Live Demo" soonLabel="Demo Coming Soon" icon={ExternalLink} project={project.title} />
-                  <ActionButton href={project.codeLink} label="GitHub" soonLabel="GitHub Coming Soon" icon={Github} project={project.title} />
-                </div>
+                {(project.demoLink || project.codeLink) && (
+                  <div className="flex flex-wrap gap-3 mt-auto">
+                    {project.demoLink && <ActionLink href={project.demoLink} label="Live Demo" icon={ExternalLink} project={project.title} />}
+                    {project.codeLink && <ActionLink href={project.codeLink} label="GitHub" icon={Github} project={project.title} />}
+                  </div>
+                )}
               </div>
             </motion.div>
           ))}
