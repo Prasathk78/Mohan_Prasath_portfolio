@@ -83,13 +83,6 @@ const projects: Project[] = [
     badge: 'Current Project',
     icon: Heart,
   },
-  {
-    title: 'ChatGPT API Integration',
-    description: 'Project integrating OpenAI APIs for conversational AI applications.',
-    tags: ['API Integration', 'JavaScript', 'AI Tools'],
-    badge: 'Current Project',
-    icon: Bot,
-  },
 ];
 
 const btnBase =

@@ -1,4 +1,5 @@
-- [x] Replace Work Experience with the supplied JD Software / EDUMAAT role details and remove SAP-learning references.
-- [x] Keep Work Experience immediately after Education.
-- [x] Omit project action buttons when their URL is unavailable.
-- [x] Verify the portfolio preview and confirm the latest build is clean.
+- [x] Update search and social description to the supplied wording.
+- [x] Remove ChatGPT API Integration and show nine featured projects.
+- [x] Place Work Experience immediately after the education cards.
+- [ ] Update the resume after receiving the replacement PDF or exact requested edits.
+- [ ] Verify the portfolio preview and latest build status.
