@@ -72,7 +72,7 @@ export const Footer = () => {
               </div>
 
               <motion.a
-                href="https://drive.google.com/file/d/1v3AriYgEfjQrYkqy4Olh3quTZo2_zrZq/view?usp=drive_link"
+                href="/__l5e/assets-v1/563f0bfc-6f02-421b-94af-07d3e185ad3e/Mohan_Prasath_Resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}
