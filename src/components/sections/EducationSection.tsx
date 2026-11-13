@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { GraduationCap, Award, Briefcase, Calendar, Clock, ExternalLink } from 'lucide-react';
+import { WorkExperienceSection } from './WorkExperienceSection';
 
 const education = [
   {
@@ -100,6 +101,8 @@ export const EducationSection = () => {
             ))}
           </div>
         </div>
+
+        <WorkExperienceSection />
 
         {/* Experience Section - Second */}
         <div>
